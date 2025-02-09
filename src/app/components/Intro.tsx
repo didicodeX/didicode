@@ -1,14 +1,30 @@
 import ReseauxSociaux from "./ReseauxSociaux";
-
+import Image from "next/image";
 export default function ContactPage() {
   return (
-    <section>
-      <div>
-        <h1 className="text-5xl font-Geist font-black">Dylane Tano</h1>
-        <p>Developpeur javascript</p>
-        <ReseauxSociaux />
+    <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="flex flex-col gap-7 order-2 md:order-none">
+        <div>
+          <h1 className="text-4xl font-Geist font-bold">Dylane Tano</h1>
+          <div className="text-md flex gap-2 items-center">
+            <span>Developpeur javascript au canada</span>
+            <Image
+              src="/images/canada.png"
+              alt="github"
+              width={32}
+              height={32}
+            />
+          </div>
+        </div>
+        {/* <ReseauxSociaux /> */}
+        <p className="text-md">
+          I am a self-taught developer who loves to build things for the web. I
+          have been coding for 3 years now and I am always looking to learn new
+          things. I am currently working on a few projects, but I am always open
+          to new opportunities.
+        </p>
         <div className="flex">
-          <button className="dark:bg-primary-700 py-2 px-10 rounded">
+          <button className="bg-primary-700 py-2 px-10 rounded text-white">
             <a
               className="button"
               href="/doc/CV_Tano_Dylane.pdf"
@@ -19,6 +35,15 @@ export default function ContactPage() {
           </button>
         </div>
       </div>
+      <div className="order-1 md:order-none">
+        <Image
+          src="/images/moi.png"
+          alt="moi"
+          width={300}
+          height={32}
+        />
+      </div>
+
       <br />
       <br />
       <br />

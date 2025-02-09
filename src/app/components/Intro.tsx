@@ -24,9 +24,9 @@ export default function ContactPage() {
           to new opportunities.
         </p>
         <div className="flex">
-          <button className="bg-primary-700 py-2 px-10 rounded text-white">
+          <button className="bg-secondary-500 py-2 px-10 rounded text-white  shadow-lg shadow-primary-500/70">
             <a
-              className="button"
+              // className="button"
               href="/doc/CV_Tano_Dylane.pdf"
               download="CV_Tano_Dylane.pdf"
             >
@@ -37,7 +37,7 @@ export default function ContactPage() {
       </div>
       <div className="order-1 md:order-none">
         <Image
-          src="/images/moi.png"
+          src="/images/moi-bg.png"
           alt="moi"
           width={300}
           height={32}

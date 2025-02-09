@@ -13,7 +13,6 @@ const techIcons = [
   { name: "Node.js", src: "/images/icons/nodejs.svg" },
   { name: "MongoDB", src: "/images/icons/mongodb.svg" },
   { name: "Swagger", src: "/images/icons/swagger.svg" },
-  { name: "Bash", src: "/images/icons/bash_dark.svg" },
   { name: "Git", src: "/images/icons/git.svg" },
 ];
 
@@ -27,7 +26,7 @@ export default function Skills() {
         className="flex gap-8 space-x-6 inset-shadow-sm inset-shadow-indigo-500"
         initial={{ x: "100%" }}
         animate={{ x: "-100%" }}
-        transition={{ ease: "linear", duration: 15, repeat: Infinity }}
+        transition={{ ease: "linear", duration: 10, repeat: Infinity }}
       >
         {[...techIcons, ...techIcons].map((tech, index) => (
           <div key={index} className="flex flex-col items-center">

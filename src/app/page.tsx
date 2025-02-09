@@ -4,7 +4,7 @@ import Button from "./components/ThemeSwitcher";
 
 export default function Home() {
   return (
-    <div className="mt-7">
+    <div className="mt-7 flex flex-col gap-8">
       <Intro/>
       <Skills/>
       <h1 className="font-SpaceGrotesk font-bold text-4xl text-center">Maîtrise les techs du web pour devenir développeur et vivre de tes compétences</h1>

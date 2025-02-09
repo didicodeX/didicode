@@ -1,46 +1,29 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useTheme } from "next-themes";
 import { Sun, MoonStar } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState("light");
+  const { theme, setTheme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  // Récupérer le thème stocké au chargement
+  // Attendre le montage pour éviter les erreurs Next.js
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    setMounted(true);
   }, []);
 
-  // Synchroniser entre plusieurs composants en écoutant localStorage
-  useEffect(() => {
-    const syncTheme = (event: StorageEvent) => {
-      if (event.key === "theme") {
-        setTheme(event.newValue || "light");
-        document.documentElement.classList.toggle("dark", event.newValue === "dark");
-      }
-    };
-    window.addEventListener("storage", syncTheme);
-    return () => window.removeEventListener("storage", syncTheme);
-  }, []);
+  if (!mounted) return null; // Évite le clignotement au chargement
 
-  // Fonction pour changer le thème
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-
-    // Déclencher un événement de stockage pour synchroniser d'autres composants
-    window.dispatchEvent(new StorageEvent("storage", { key: "theme", newValue: newTheme }));
-  };
+  // Détecter le thème actuel (dark, light ou system)
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
     <button
-      onClick={toggleTheme}
+      onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
       className="p-2 text-slate-800 rounded dark:text-white hover:bg-secondary-100 dark:hover:bg-primary-800"
     >
-      {theme === "light" ? <Sun /> : <MoonStar />}
+      {currentTheme === "light" ? <Sun /> : <MoonStar />}
     </button>
   );
 }

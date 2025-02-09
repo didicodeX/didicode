@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/NavBar";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,13 +15,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-white dark:bg-primary-900 dark:text-white  font-text">
-        <div>
-          <Navbar/>
-          {children}
-          </div>
-      </body>
-    </html>
+<html lang="en" className="dark">
+  <body className="bg-white dark:bg-primary-900 dark:text-white font-text text-black flex flex-col min-h-screen">
+    {/* Navbar */}
+    <Navbar />
+
+    {/* Contenu principal qui prend tout l’espace restant */}
+    <main className="flex-1  max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full mt-20">
+      {children}
+    </main>
+
+    {/* Footer qui reste en bas */}
+    <Footer />
+  </body>
+</html>
+
   );
 }

@@ -1,4 +1,5 @@
 import Intro from "./components/Intro";
+import Services from "./components/Services";
 import Skills from "./components/Skills";
 import Button from "./components/ThemeSwitcher";
 
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="mt-7 flex flex-col gap-8">
       <Intro/>
       <Skills/>
+      <Services/>
       <h1 className="font-SpaceGrotesk font-bold text-4xl text-center">Maîtrise les techs du web pour devenir développeur et vivre de tes compétences</h1>
 
       <a href="#" className="text-link hover:text-link-hover text-md mt-4">

@@ -1,8 +1,9 @@
+import Button from "./Button";
 import ReseauxSociaux from "./ReseauxSociaux";
 import Image from "next/image";
 export default function ContactPage() {
   return (
-    <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <section className="grid grid-cols-1 gap-6 md:grid-cols-2 justify-items-center bg-green-500 justify-center">
       <div className="flex flex-col gap-7 order-2 md:order-none">
         <div>
           <h1 className="text-4xl font-Geist font-bold">Dylane Tano</h1>
@@ -24,15 +25,13 @@ export default function ContactPage() {
           to new opportunities.
         </p>
         <div className="flex">
-          <button className="bg-secondary-500 py-2 px-10 rounded text-white  shadow-lg shadow-primary-500/70">
+          <Button text={"Telechargez mon cv"}>
             <a
-              // className="button"
               href="/doc/CV_Tano_Dylane.pdf"
               download="CV_Tano_Dylane.pdf"
             >
-              Télécharger mon CV
             </a>
-          </button>
+          </Button>
         </div>
       </div>
       <div className="order-1 md:order-none">
@@ -43,10 +42,6 @@ export default function ContactPage() {
           height={32}
         />
       </div>
-
-      <br />
-      <br />
-      <br />
     </section>
   );
 }

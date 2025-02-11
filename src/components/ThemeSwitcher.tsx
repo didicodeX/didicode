@@ -17,7 +17,10 @@ export default function ThemeSwitcher() {
 
   // Détecter le thème actuel (dark, light ou system)
   const currentTheme = theme === "system" ? systemTheme : theme;
-
+  // Vérifier si le code s'exécute dans le navigateur
+  if (typeof window === 'undefined') {
+    return null;
+  }
   return (
     <button
       onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}

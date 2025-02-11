@@ -25,9 +25,8 @@ export default function Footer() {
 
   return (
     <footer>
-      <Divider />
-      <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full mb-6">
-        <p>&copy; 2025 Dylane Tano. Tout droit resevee</p>
+      <div className="py-16 mb-6 text-center">
+        <p>&copy; 2025 Dylane Tano. All rights reserved.</p>
         {showButton && (
           <button
             onClick={scrollToTop}
@@ -40,9 +39,3 @@ export default function Footer() {
     </footer>
   );
 }
-// //.right-5 {
-//   right: 14.25rem;
-// }
-// .bottom-5 {
-//   bottom: 5.25rem;
-// }

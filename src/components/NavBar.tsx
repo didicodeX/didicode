@@ -15,17 +15,17 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-chillax text-primary-600 font-bold dark:text-white"
+            className="text-xl font-chillax text-primary-600 font-bold dark:text-white"
           >
             didicode
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex text-sm">
+          <div className="flex text-sm gap-2">
             <div className="flex justify-center items-center">
               <Link
                 href="/"
-                className="py-2 hover:bg-primary-100 dark:hover:bg-primary-800 rounded px-5 transition"
+                className="py-2 rounded transition"
               >
                 Accueil
               </Link>
@@ -33,23 +33,15 @@ const Navbar = () => {
             <div className="flex justify-center items-center">
               <Link
                 href="/projets"
-                className="py-2 hover:bg-primary-100 dark:hover:bg-primary-800 rounded px-5 transition"
+                className="py-2 rounded transition"
               >
                 Projets
               </Link>
             </div>
             <div className="flex justify-center items-center">
               <Link
-                href="/contact"
-                className="py-2 hover:bg-primary-100 dark:hover:bg-primary-800 rounded px-5 transition"
-              >
-                Contact
-              </Link>
-            </div>
-            <div className="flex justify-center items-center">
-              <Link
                 href="/blog"
-                className="py-2 hover:bg-primary-100 dark:hover:bg-primary-800 rounded px-5 transition"
+                className="py-2 rounded transition"
               >
                 Blog
               </Link>
@@ -58,9 +50,9 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {/* <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          </button> */}
         </div>
       </div>
 

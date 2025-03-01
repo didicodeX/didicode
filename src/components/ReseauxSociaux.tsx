@@ -6,7 +6,7 @@ export default function ReseauxSociaux() {
       <a href="https://github.com/RusselTano" target="_blank" rel="noopener noreferrer">
         {/* Icône en mode Light */}
         <Image
-          src="images/icons/github_light.svg"
+          src="/images/icons/Github_light.svg"
           alt="GitHub Light"
           width={28}
           height={28}
@@ -15,7 +15,7 @@ export default function ReseauxSociaux() {
 
         {/* Icône en mode Dark */}
         <Image
-          src="images/icons/github_dark.svg"
+          src="/images/icons/Github_dark.svg"
           alt="GitHub Dark"
           width={28}
           height={28}

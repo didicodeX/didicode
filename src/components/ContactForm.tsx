@@ -10,13 +10,20 @@ import Button from "./Button";
 const contactSchema = z.object({
   name: z.string().min(2, "Le nom doit avoir au moins 2 caractères"),
   email: z.string().email("Format d'email invalide"),
-  message: z.string().min(10, "Le message doit contenir au moins 10 caractères"),
+  message: z
+    .string()
+    .min(10, "Le message doit contenir au moins 10 caractères"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
-  const { register, handleSubmit, reset, formState: { errors, isValid } } = useForm<ContactFormData>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid },
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     mode: "onChange", // Valide en temps réel
   });
@@ -43,8 +50,8 @@ const ContactForm = () => {
       } else {
         setMessage("❌ Erreur : " + result.error);
       }
-    } catch (error) {
-      setMessage("❌ Erreur serveur. Réessayez plus tard.");
+    } catch (error: unknown) {
+      setMessage(`❌ Erreur serveur. Réessayez plus tard.${error}`);
     }
 
     setLoading(false);
@@ -76,10 +83,15 @@ const ContactForm = () => {
         placeholder="Votre message"
         rows={4}
       ></textarea>
-      {errors.message && <p className="text-red-500">{errors.message.message}</p>}
+      {errors.message && (
+        <p className="text-red-500">{errors.message.message}</p>
+      )}
 
       {/* Bouton */}
-      <Button text={loading ? "Envoi..." : "Envoyer"} disabled={loading || !isValid} />
+      <Button
+        text={loading ? "Envoi..." : "Envoyer"}
+        disabled={loading || !isValid}
+      />
 
       {/* Message de confirmation / erreur */}
       {message && <p className="text-center mt-3">{message}</p>}

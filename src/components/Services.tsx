@@ -1,4 +1,3 @@
-import Divider from "./Divider";
 import Service from "./Service";
 
 const servicesData = [

@@ -1,5 +1,4 @@
 import ContactForm from "./ContactForm";
-import Divider from "./Divider";
 import ReseauxSociaux from "./ReseauxSociaux";
 
 export default function Contact() {

@@ -1,7 +1,6 @@
 "use client"; // Obligatoire pour Next.js 13+ (rendu côté client)
 import { useState, useEffect } from "react";
 import { ArrowBigUpDash } from "lucide-react";
-import Divider from "./Divider";
 
 export default function Footer() {
   const [showButton, setShowButton] = useState(false);

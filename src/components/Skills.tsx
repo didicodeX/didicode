@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const techIcons = [
   "/images/icons/figma.svg",
@@ -30,7 +31,7 @@ export default function Skills() {
         transition={{ ease: "linear", duration: 10, repeat: Infinity }}
       >
         {[...techIcons, ...techIcons].map((src, index) => (
-          <img
+          <Image
             key={index}
             src={src}
             alt="tech icon"

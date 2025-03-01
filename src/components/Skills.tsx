@@ -34,6 +34,8 @@ export default function Skills() {
           <Image
             key={index}
             src={src}
+            width={50}
+            height={50}
             alt="tech icon"
             className="w-30 h-12 object-contain"
           />

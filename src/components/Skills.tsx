@@ -9,7 +9,7 @@ const techIcons = [
   "/images/icons/sass.svg",
   "/images/icons/tailwindcss.svg",
   "/images/icons/typescript.svg",
-  "/images/icons/react_light.svg",
+  "/images/icons/React_light.svg",
   "/images/icons/nextjs_icon_dark.svg",
   "/images/icons/nodejs.svg",
   "/images/icons/mongodb.svg",

@@ -13,6 +13,7 @@ const techIcons = [
   "/images/icons/nodejs.svg",
   "/images/icons/mongodb.svg",
   "/images/icons/swagger.svg",
+  "/images/icons/heroku.svg",
   "/images/icons/git.svg",
 ];
 

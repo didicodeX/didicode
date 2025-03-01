@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -8,41 +10,19 @@ export async function POST(req: Request) {
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
     }
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
+
+    await resend.emails.send({
+      from: "contact@votre-domaine.com", // Doit être vérifié sur Resend
+      to: "dylane@didicode.com",
+      subject: "Nouveau message de contact",
+      html: `<p><strong>Nom:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong> ${message}</p>`,
     });
 
-const mailOptions = {
-  from: `"${name}" <${email}>`, // L'expéditeur affiché sera toujours ton adresse
-  replyTo: email, // Quand tu cliques sur "Répondre", ça mettra bien l'email du visiteur
-  to: process.env.EMAIL_USER,
-  subject: `📩 Nouveau message de ${name}`,
-  text: `Nom: ${name}\nEmail: ${email}\nMessage: ${message}`,
-  html: `
-    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-      <h2 style="color: #007bff;">📩 Nouveau message de ${name}</h2>
-      <p><strong>Nom:</strong> ${name}</p>
-      <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #007bff;">${email}</a></p>
-      <p><strong>Message:</strong></p>
-      <blockquote style="background: #f9f9f9; padding: 10px; border-left: 4px solid #007bff;">
-        ${message}
-      </blockquote>
-      <hr>
-      <p style="font-size: 12px; color: #555;">Ce message a été envoyé via le formulaire de contact de ton site.</p>
-    </div>
-  `,
-};
-
-
-    await transporter.sendMail(mailOptions);
-
-    return NextResponse.json({ success: true, message: "Email envoyé avec succès !" });
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("Erreur d'envoi d'email:", error);
-    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
+    console.error(error);
+    return NextResponse.json({ error: "Erreur lors de l'envoi de l'email" }, { status: 500 });
   }
 }

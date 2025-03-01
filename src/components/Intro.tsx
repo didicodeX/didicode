@@ -18,28 +18,19 @@ export default function ContactPage() {
           </div>
         </div>
         <p className="text-md">
-          I am a self-taught developer who loves to build things for the web. I
-          have been coding for 3 years now and I am always looking to learn new
-          things. I am currently working on a few projects, but I am always open
-          to new opportunities.
+          Je suis un développeur autodidacte qui aime créer des choses pour le
+          web. Je code depuis 2 ans maintenant et je cherche toujours à
+          apprendre de nouvelles choses. Je travaille actuellement sur quelques
+          projets, mais je suis toujours ouvert à de nouvelles opportunités.
         </p>
         <div className="grid md:flex">
           <Button text={"Telechargez mon cv"}>
-            <a
-              href="/doc/CV_Tano_Dylane.pdf"
-              download="CV_Tano_Dylane.pdf"
-            >
-            </a>
+            <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf"></a>
           </Button>
         </div>
       </div>
       <div className="order-1 md:order-none">
-        <Image
-          src="/images/moi-bg.png"
-          alt="moi"
-          width={300}
-          height={32}
-        />
+        <Image src="/images/moi-bg.png" alt="moi" width={300} height={32} />
       </div>
     </section>
   );

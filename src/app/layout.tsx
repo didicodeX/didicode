@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export const metadata = {
   title: "Didicode - Développeur Web",
   description: "Développeur JavaScript spécialisé en React et Node.js. Découvrez mon portfolio et contactez-moi.",
-  keywords: "Didicode, développeur, Next.js, React, JavaScript, web",
+  keywords: "Didicode, développeur, Node.js, React, JavaScript, web",
 };
 
 

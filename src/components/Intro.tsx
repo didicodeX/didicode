@@ -18,7 +18,13 @@ export default function ContactPage() {
           </div>
         </div>
         <p className="text-md">
-        Je suis un développeur autodidacte qui aime créer des choses pour le web. Je code depuis 2 ans maintenant et je cherche toujours à apprendre de nouvelles choses. Je travaille actuellement sur quelques projets, mais je suis toujours ouvert à de nouvelles opportunités.</p>
+          Je suis un développeur web autodidacte avec deux ans d'expérience,
+          passionné par la création d'applications et de solutions numériques.
+          Toujours en quête d'apprentissage, j'explore continuellement de
+          nouvelles technologies pour améliorer mes compétences. Actuellement
+          impliqué dans plusieurs projets, je reste ouvert à de nouvelles
+          opportunités pour collaborer et apporter mon expertise.
+        </p>
         <div className="grid md:flex">
           {/* 👉 Lien autour du bouton */}
           <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf">

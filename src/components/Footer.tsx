@@ -24,17 +24,24 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="py-16 mb-6 text-center">
+      <div className="py-16 mb-6 text-center flex items-center justify-center gap-8">
         <p>&copy; 2025 Dylane Tano. Tous droits réservés.</p>
-        {showButton && (
-          <button
-            onClick={scrollToTop}
-            className="fixed bottom-5 right-5 z-10 p-2 text-slate-800 rounded dark:text-white bg-secondary-100  dark:bg-primary-800"
-          >
-            <ArrowBigUpDash />
-          </button>
-        )}
+        <a
+          target="_blank"
+          className="text-blue-600 hover:underline"
+          href="https://didi-code.vercel.app/"
+        >
+          V1
+        </a>
       </div>
+      {showButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-5 right-5 z-10 p-2 text-slate-800 rounded dark:text-white bg-secondary-100  dark:bg-primary-800"
+        >
+          <ArrowBigUpDash />
+        </button>
+      )}
     </footer>
   );
 }

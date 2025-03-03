@@ -18,9 +18,9 @@ export default function ContactPage() {
           </div>
         </div>
         <p className="text-md">
-          Je suis un développeur web autodidacte avec deux ans d'expérience,
-          passionné par la création d'applications et de solutions numériques.
-          Toujours en quête d'apprentissage, j'explore continuellement de
+          Je suis un développeur web autodidacte avec deux ans d&apos;expérience,
+          passionné par la création d&apos;applications et de solutions numériques.
+          Toujours en quête d&apos;apprentissage, j&apos;explore continuellement de
           nouvelles technologies pour améliorer mes compétences. Actuellement
           impliqué dans plusieurs projets, je reste ouvert à de nouvelles
           opportunités pour collaborer et apporter mon expertise.

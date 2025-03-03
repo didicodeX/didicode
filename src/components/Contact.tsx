@@ -19,7 +19,7 @@ export default function Contact() {
             Contact me
           </h2>
           <p>
-            Vous avez une question ou un projet en tête ? N'hésitez pas à nous
+            Vous avez une question ou un projet en tête ? N&apos;hésitez pas à nous
             contacter.
           </p>
           <p>Localisation: Canada, Bathusrt</p>

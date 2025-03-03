@@ -46,7 +46,7 @@ export default function ProjectPage() {
           Didimeet - Event Management System
         </h1>
         <p className="text-gray-600">
-          Une application complète de gestion d'événements où les utilisateurs
+          Une application complète de gestion d&apos;événements où les utilisateurs
           peuvent créer, participer et commenter des événements.
         </p>
       </header>
@@ -110,7 +110,7 @@ export default function ProjectPage() {
           </h2>
         </header>
         <p className="text-gray-600 mt-2 mb-4">
-          L'API a été conçue selon les principes RESTful et respecte les bonnes
+          L&apos;API a été conçue selon les principes RESTful et respecte les bonnes
           pratiques SOLID pour une architecture maintenable et évolutive.
         </p>
         <ListWithIcons items={docListe} iconPath="/images/tick.png" />

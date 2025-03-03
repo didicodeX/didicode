@@ -4,28 +4,11 @@ import { ThemeProvider } from "next-themes";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: {
-    default: "Didicode - Développeur Web",
-    template: "%s | Didicode",
-  },
-  description: "Bienvenue sur mon portfolio. Découvrez mes projets en développement web.",
-  keywords: "Didicode, développeur, Next.js, Nodejs, React, portfolio, web",
-  openGraph: {
-    title: "Didicode - Développeur Web & Mobile",
-    description: "Portfolio de Didicode, expert en développement web.",
-    url: "https://didicode.com",
-    siteName: "Didicode",
-    images: [
-      {
-        url: "/moi.png", // Remplace par ton image
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "fr_FR",
-    type: "website",
-  },
+  title: "Didicode - Développeur Web",
+  description: "Développeur JavaScript spécialisé en React et Node.js. Découvrez mon portfolio et contactez-moi.",
+  keywords: "Didicode, développeur, Node.js, React, JavaScript, web",
 };
+
 
 export default function RootLayout({
   children,

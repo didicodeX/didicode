@@ -18,7 +18,12 @@ export default function ContactPage() {
           </div>
         </div>
         <p className="text-md">
-          Je suis un développeur autodidacte qui aime créer des choses pour le web...
+          Je suis un développeur web autodidacte avec deux ans d'expérience,
+          passionné par la création d'applications et de solutions numériques.
+          Toujours en quête d'apprentissage, j'explore continuellement de
+          nouvelles technologies pour améliorer mes compétences. Actuellement
+          impliqué dans plusieurs projets, je reste ouvert à de nouvelles
+          opportunités pour collaborer et apporter mon expertise.
         </p>
         <div className="grid md:flex">
           {/* 👉 Lien autour du bouton */}

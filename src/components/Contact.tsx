@@ -6,7 +6,7 @@ export default function Contact() {
     <section>
       <div className="grid grid-cols-1 md:justify-items-center md:grid-cols-2 py-16 gap-y-10">
         <div className=" col-span-3 mb-16 text-center">
-          <h2 className="text-3xl text-center  font-bold text-gray-900">
+          <h2 className="text-3xl text-center font-SpaceGrotesk  font-bold text-gray-900">
             Prêt à démarrer 🚀 ?
           </h2>
           <p className="mt-4 text-gray-700 dark:text-gray-300">
@@ -18,8 +18,11 @@ export default function Contact() {
           <h2 className="text-3xl font-SpaceGrotesk font-bold text-gray-900 ">
             Contact me
           </h2>
-          <p>Have a question or a project in mind? Feel free to reach out.</p>
-          <p>Location: Colombia, Valle del cauca</p>
+          <p>
+            Vous avez une question ou un projet en tête ? N'hésitez pas à nous
+            contacter.
+          </p>
+          <p>Localisation: Canada, Bathusrt</p>
           <ReseauxSociaux />
         </div>
         <ContactForm />

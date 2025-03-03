@@ -11,7 +11,7 @@ const servicesData = [
     image: "/images/api.png",
     title: "Développement d'API REST",
     description:
-      "Création d'API sécurisées et bien documentées avec Node.js et Swagger.",
+      "Conception d'API REST en Node.js selon les principes SOLID et documentées avec Swagger",
   },
   {
     image: "/images/graphic-designer.png",

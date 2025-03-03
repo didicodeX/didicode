@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="py-16 mb-6 text-center">
-        <p>&copy; 2025 Dylane Tano. All rights reserved.</p>
+        <p>&copy; 2025 Dylane Tano. Tous droits réservés.</p>
         {showButton && (
           <button
             onClick={scrollToTop}

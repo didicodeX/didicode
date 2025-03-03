@@ -18,8 +18,11 @@ export default function Contact() {
           <h2 className="text-3xl font-SpaceGrotesk font-bold text-gray-900 ">
             Contact me
           </h2>
-          <p>Have a question or a project in mind? Feel free to reach out.</p>
-          <p>Location: Colombia, Valle del cauca</p>
+          <p>
+            Vous avez une question ou un projet en tête ? N'hésitez pas à nous
+            contacter.
+          </p>
+          <p>Localisation: Canada, Bathusrt</p>
           <ReseauxSociaux />
         </div>
         <ContactForm />

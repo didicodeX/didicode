@@ -21,8 +21,6 @@
   font-style: normal;
 }
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,3 +30,6 @@ a {
   display: block;
 }
 
+li {
+  list-style: none;
+}

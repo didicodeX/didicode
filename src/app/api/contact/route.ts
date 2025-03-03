@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend("re_dWiQbwxR_5nst8fsZF98at3gawUmNTtMu");
+const resend = new Resend(process.env.RESEND_API_KEY); // Stocke ta clé dans `.env.local`
 
 export async function POST(req: Request) {
   try {
@@ -11,15 +11,22 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
     }
 
-    await resend.emails.send({
-      from: "contact@votre-domaine.com", // Doit être vérifié sur Resend
+    const response = await resend.emails.send({
+      from: "noreply@didicode.com", // Adresse vérifiée sur Resend
       to: "dylane@didicode.com",
-      subject: "Nouveau message de contact",
-      html: `<p><strong>Nom:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Message:</strong> ${message}</p>`,
+      replyTo: email, // Permet à Dylane de répondre directement
+      subject: "📩 Nouveau message de contact",
+      html: `
+        <h2>Nouveau message de contact</h2>
+        <p><strong>Nom:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
+      `,
     });
 
+    if (response.error) {
+      throw new Error(response.error.message);
+    }
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error(error);

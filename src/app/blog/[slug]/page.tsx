@@ -6,17 +6,17 @@ import html from "remark-html";
 import Divider from "@/components/Divider";
 
 interface ArticleProps {
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }
 
 export default async function Article({ params }: ArticleProps) {
-  // Attendre la résolution de params (si c'est nécessaire)
-  const { slug } = await Promise.resolve(params);
+  // Vérifie si params est une promesse et attends sa résolution
+  const resolvedParams = await params;
   
   const filePath = path.join(
     process.cwd(),
     "content/blog",
-    `${slug}.md`
+    `${resolvedParams.slug}.md`
   );
   const fileContent = fs.readFileSync(filePath, "utf-8");
 
@@ -27,7 +27,7 @@ export default async function Article({ params }: ArticleProps) {
   return (
     <div className="container">
       <div className="article" dangerouslySetInnerHTML={{ __html: contentHtml }} />
-      <Divider/>
+      <Divider />
     </div>
   );
 }

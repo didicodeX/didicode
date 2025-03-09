@@ -22,26 +22,17 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="flex text-sm gap-2">
             <div className="flex justify-center items-center">
-              <Link
-                href="/"
-                className="py-2 rounded transition"
-              >
+              <Link href="/" className="py-2 rounded transition">
                 Accueil
               </Link>
             </div>
             <div className="flex justify-center items-center">
-              <Link
-                href="/projets"
-                className="py-2 rounded transition"
-              >
+              <Link href="/projets" className="py-2 rounded transition">
                 Projets
               </Link>
             </div>
             <div className="flex justify-center items-center">
-              <Link
-                href="/blog"
-                className="py-2 rounded transition"
-              >
+              <Link href="/blog" className="py-2 rounded transition">
                 Blog
               </Link>
             </div>
@@ -58,22 +49,13 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden mx-auto pb-6 px-4 sm:px-6 lg:px-8 space-y-3">
-          <Link
-            href="/"
-             onClick={() => setIsOpen(false)}
-          >
+          <Link href="/" onClick={() => setIsOpen(false)}>
             Accueil
           </Link>
-          <Link
-            href="/projets"
-             onClick={() => setIsOpen(false)}
-          >
+          <Link href="/projets" onClick={() => setIsOpen(false)}>
             Projets
           </Link>
-          <Link
-            href="/contact"
-             onClick={() => setIsOpen(false)}
-          >
+          <Link href="/contact" onClick={() => setIsOpen(false)}>
             Contact
           </Link>
           <Link

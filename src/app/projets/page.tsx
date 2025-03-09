@@ -39,7 +39,7 @@ const linksList = [
 
 export default function ProjectPage() {
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-8">
+    <div className="max-w-3xl mx-auto px-6 space-y-8">
       {/* Titre du projet */}
       <header className="pb-4">
         <h1 className="pb-4 font-SpaceGrotesk text-3xl font-bold">

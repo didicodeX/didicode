@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ReseauxSociaux() {
   return (
     <div className="bg-red flex gap-4 items-center">
-      <a href="https://github.com/RusselTano" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/didicodePro" target="_blank" rel="noopener noreferrer">
         {/* Icône en mode Light */}
         <Image
           src="/images/icons/Github_light.svg"

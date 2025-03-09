@@ -5,10 +5,10 @@ import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Didicode - Développeur Web",
-  description: "Développeur JavaScript spécialisé en React et Node.js. Découvrez mon portfolio et contactez-moi.",
+  description:
+    "Développeur JavaScript spécialisé en React et Node.js. Découvrez mon portfolio et contactez-moi.",
   keywords: "Didicode, développeur, Node.js, React, JavaScript, web",
 };
-
 
 export default function RootLayout({
   children,
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr" suppressHydrationWarning>
       <body className="bg-slate-50 dark:bg-primary-900 dark:text-white font-text text-black flex flex-col min-h-screen">
         {/* Navbar */}
         <ThemeProvider attribute="class" defaultTheme="system">

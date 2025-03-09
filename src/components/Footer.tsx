@@ -6,17 +6,22 @@ export default function Footer() {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+  
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowButton(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -24,7 +29,7 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="py-16 mb-6 text-center flex items-center justify-center gap-8">
+      <div className="py-16 text-center flex items-center justify-center gap-8">
         <p>&copy; 2025 Dylane Tano. Tous droits réservés.</p>
         <a
           target="_blank"

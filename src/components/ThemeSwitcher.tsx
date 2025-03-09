@@ -8,19 +8,15 @@ export default function ThemeSwitcher() {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Attendre le montage pour éviter les erreurs Next.js
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Évite le clignotement au chargement
+  // Éviter le flash blanc au chargement en définissant un thème par défaut
+  if (!mounted) return <div className="w-8 h-8" />;
 
-  // Détecter le thème actuel (dark, light ou system)
   const currentTheme = theme === "system" ? systemTheme : theme;
-  // Vérifier si le code s'exécute dans le navigateur
-  if (typeof window === 'undefined') {
-    return null;
-  }
+
   return (
     <button
       onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}

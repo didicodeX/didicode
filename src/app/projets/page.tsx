@@ -39,16 +39,17 @@ const linksList = [
 
 export default function ProjectPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 space-y-8">
+    <div className="max-w-3xl mx-auto mt-12 px-6 space-y-8">
       {/* Titre du projet */}
-      <header className="pb-4">
-        <h1 className="pb-4 font-SpaceGrotesk text-3xl font-bold">
+      <header className="text-center mb-10">
+        {" "}
+        <h1 className="xl:text-4xl lg:text-3xl text-2xl mb-5 font-SpaceGrotesk font-extrabold">
           Didimeet - Event Management System
         </h1>
-        <p className="text-gray-600">
+        <h2 className=" md:text-xl  lg:text-xl xl:text-2xl font-SpaceGrotesk">
           Une application complète de gestion d'événements où les utilisateurs
           peuvent créer, participer et commenter des événements.
-        </p>
+        </h2>
       </header>
       <Divider />
       {/* Technologies utilisées */}
@@ -65,13 +66,75 @@ export default function ProjectPage() {
             Technologies utilisées
           </h2>
         </header>
-        <ul className="flex flex-wrap gap-4 mt-2">
-          <li className="bg-gray-200 px-3 py-1 rounded-md">React.js</li>
-          <li className="bg-gray-200 px-3 py-1 rounded-md">TailwindCSS</li>
-          <li className="bg-gray-200 px-3 py-1 rounded-md">Node.js</li>
-          <li className="bg-gray-200 px-3 py-1 rounded-md">Express.js</li>
-          <li className="bg-gray-200 px-3 py-1 rounded-md">MongoDB</li>
-          <li className="bg-gray-200 px-3 py-1 rounded-md">JWT</li>
+        <ul className="flex flex-wrap gap-4 mt-2 items-center">
+          <li>
+            {" "}
+            <Image
+              src={"/images/icons/mongodb.svg"}
+              width={20}
+              height={10}
+              alt="tech icon"
+            />{" "}
+          </li>
+          <li>
+            <Image
+              src={"/images/icons/expressjs.svg"}
+              width={40}
+              height={40}
+              alt="tech icon"
+              className="dark:hidden"
+            />
+            <Image
+              src={"/images/icons/expressjs_dark.svg"}
+              width={40}
+              height={40}
+              alt="tech icon"
+              className="hidden dark:block"
+            />
+          </li>
+          <li>
+            <Image
+              src={"/images/icons/React_dark.svg"}
+              width={40}
+              height={40}
+              alt="tech icon"
+              className="dark:hidden"
+            />
+            <Image
+              src={"/images/icons/React_light.svg"}
+              width={40}
+              height={40}
+              alt="tech icon"
+              className="hidden dark:block"
+            />
+          </li>
+          <li>
+            {" "}
+            <Image
+              src={"/images/icons/nodejs.svg"}
+              width={40}
+              height={40}
+              alt="tech icon"
+            />{" "}
+          </li>
+          <li>
+            {" "}
+            <Image
+              src={"/images/icons/tailwindcss.svg"}
+              width={40}
+              height={40}
+              alt="tech icon"
+            />{" "}
+          </li>
+
+          <li>
+            <Image
+              src={"/images/icons/jwt.svg"}
+              width={40}
+              height={40}
+              alt="tech icon"
+            />{" "}
+          </li>
         </ul>
       </section>
       <Divider />

@@ -1,6 +1,6 @@
 ---
 title: "Pourquoi le css est le language le plus difficile a apprendre?"
-date: "2025-03-07"
+date: "Feb 2025"
 intro: "CSS est souvent considéré comme un langage difficile à maîtriser, même par des développeurs expérimentés. Voici pourquoi "
 author: "Didicode"
 ---

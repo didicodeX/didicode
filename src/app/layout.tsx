@@ -9,7 +9,6 @@ export const metadata = {
     "Développeur JavaScript spécialisé en React et Node.js. Découvrez mon portfolio et contactez-moi.",
   keywords: "Didicode, développeur, Node.js, React, JavaScript, web",
 };
-console.log("Hydration Debug - On Server:", typeof window === "undefined");
 
 export default function RootLayout({
   children,

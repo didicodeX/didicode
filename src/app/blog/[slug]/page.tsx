@@ -10,10 +10,13 @@ interface ArticleProps {
 }
 
 export default async function Article({ params }: ArticleProps) {
+  // Attendre la résolution de params (si c'est nécessaire)
+  const { slug } = await Promise.resolve(params);
+  
   const filePath = path.join(
     process.cwd(),
     "content/blog",
-    `${params.slug}.md`
+    `${slug}.md`
   );
   const fileContent = fs.readFileSync(filePath, "utf-8");
 

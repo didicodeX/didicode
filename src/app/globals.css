@@ -25,6 +25,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  ::selection {
+    @apply bg-secondary-500 text-white;
+  }
+}
+
 a {
   color: inherit;
   display: block;
@@ -43,7 +49,7 @@ html {
 /* Styles pour améliorer la lisibilité du Markdown */
 .container {
   max-width: 900px;
-  margin: 128px auto;
+  margin: 128px auto 0;
 }
 
 /* Amélioration des titres */

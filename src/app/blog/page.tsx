@@ -3,20 +3,23 @@ import { getAllPosts, Post } from "@/lib/posts";
 
 export default function Blog() {
   const posts: Post[] = getAllPosts();
-  console.log("Articles récupérés :", posts); // 🔍 DEBUG
 
   return (
     <div className="mt-32">
-      <h1 className="text-3xl mb-10 font-SpaceGrotesk font-black text-center">
-        Didicodex — Le guide du développeur moderne
-      </h1>
-      <p></p>
-      <ul>
+      <header className="text-center mb-10">
+        <h1 className="text-3xl mb-5 font-SpaceGrotesk font-black">
+          Didicodex — Le guide du développeur moderne
+        </h1>
+        <p className="font-semibold text-lg">
+          De la première ligne de code à tes projets les plus ambitieux, Didicodex
+          est là pour t’aider à progresser. Articles, tutoriels et formations :
+          découvre les clés pour devenir un développeur moderne et maîtriser les
+          technologies du web.
+        </p>
+      </header>
+      <ul className="w-fi">
         {posts.map((post) => (
-          <li
-            key={post.slug}
-            className="flex flex-col gap-y-2 mb-4 p-4"
-          >
+          <li key={post.slug} className="flex flex-col gap-y-2 mb-4 p-4">
             <Link
               href={`/blog/${post.slug}`}
               className="flex flex-col gap-y-2 p-2"
@@ -24,8 +27,9 @@ export default function Blog() {
               <h2 className="text-secondary-500 font-semibold">
                 {post.metadata.title}
               </h2>
-              <p className="text-gray text-sm">
-                {post.metadata.date} - {post.metadata.author}
+              <p>{post.metadata.intro}</p>
+              <p className="text-slate-500 text-sm">
+                {post.metadata.date}
               </p>
             </Link>
           </li>

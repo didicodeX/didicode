@@ -42,10 +42,10 @@ export default function ProjectPage() {
     <div className="max-w-3xl mx-auto mt-12 px-6 space-y-12">
       {/* Titre du projet */}
       <header className="mb-12">
-        <h1 className="text-4xl font-extrabold font-SpaceGrotesk">
+        <h1 className="xl:text-4xl lg:text-3xl text-2xl mb-5 font-SpaceGrotesk font-extrabold">
           Didimeet - Event Management System
         </h1>
-        <h2 className="mt-3 text-xl text-gray-400 font-SpaceGrotesk">
+        <h2 className="">
           Une application complète de gestion d'événements où les utilisateurs
           peuvent créer, participer et commenter des événements.
         </h2>
@@ -116,25 +116,30 @@ function SectionHeader({ title, imgSrc, description }: HeaderProps) {
 }
 
 function TechnologyIcons() {
-  const techIcons = [
-    "/images/icons/expressjs.svg",
-    "/images/icons/React_dark.svg",
-    "/images/icons/nodejs.svg",
-    "/images/icons/tailwindcss.svg",
-    "/images/icons/jwt.svg",
+  const techData = [
+    { src: "/images/icons/mongodb.svg", name: "MongoDB" },
+    { src: "/images/icons/expressjs.svg", name: "Express.js" },
+    { src: "/images/icons/React_dark.svg", name: "React" },
+    { src: "/images/icons/nodejs.svg", name: "Node.js" },
+    { src: "/images/icons/tailwindcss.svg", name: "Tailwind CSS" },
+    { src: "/images/icons/jwt.svg", name: "JWT" },
   ];
 
   return (
-    <ul className="flex flex-wrap gap-4 items-center">
-      {techIcons.map((icon, index) => (
-        <li key={index}>
+    <ul className="flex flex-wrap gap-6 items-center mt-2">
+      {techData.map((tech, index) => (
+        <li
+          key={index}
+          className="flex flex-col items-center text-gray-400 text-xs sm:text-sm md:text-base"
+        >
           <Image
-            src={icon}
-            width={30}
-            height={10}
-            alt="tech icon"
-            className="drop-shadow-md"
+            src={tech.src}
+            width={40}
+            height={40}
+            alt={tech.name}
+            className="drop-shadow-md h-10"
           />
+          <span className="mt-2 l">{tech.name}</span>
         </li>
       ))}
     </ul>

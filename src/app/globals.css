@@ -25,9 +25,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer base {
   ::selection {
     @apply bg-secondary-500 text-white;
+  }
+  .l::first-letter {
+    @apply text-secondary-500;
+  }
+
+  p {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-extrabold font-SpaceGrotesk;
+  }
+
+  h2 {
+    @apply text-lg sm:text-lg md:text-2xl font-semibold font-SpaceGrotesk  mb-5 sm:mb-10;
+  }
+
+  header h2 {
+    @apply text-lg sm:text-lg md:text-xl font-semibold font-SpaceGrotesk ;
+  }
+
+  section h2 {
+    @apply text-2xl sm:text-2xl md:text-3xl font-SpaceGrotesk font-bold md:mb-12;
+
+  }
+
+  li {
+    @apply text-sm sm:text-sm md:text-base;
   }
 }
 
@@ -102,3 +130,4 @@ footer {
   font-size: 14px;
   color: #aaa;
 }
+

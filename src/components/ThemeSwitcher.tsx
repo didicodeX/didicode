@@ -20,9 +20,9 @@ export default function ThemeSwitcher() {
   return (
     <button
       onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
-      className="p-2 text-slate-800 rounded dark:text-white hover:bg-secondary-100 dark:hover:bg-primary-800"
+      className="px-3 text-slate-800 rounded dark:text-white hover:bg-secondary-100 dark:hover:bg-primary-800"
     >
-      {currentTheme === "light" ? <Sun /> : <MoonStar />}
+      {currentTheme === "light" ? <Sun size={20} /> : <MoonStar size={20} />}
     </button>
   );
 }

@@ -6,9 +6,9 @@ export default function ContactPage() {
     <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
       <div className="flex flex-col gap-7 order-2 md:order-none">
         <div>
-          <h1 className="text-4xl font-Geist font-bold">Dylane Tano</h1>
-          <div className="text-md flex gap-2 items-center">
-            <span>Développeur JavaScript au Canada</span>
+          <h1>Dylane Tano</h1>
+          <div className="text-md flex gap-2 items-center md:mt-2">
+            <span className="text-lg sm:text-lg md:text-xl ">Développeur JavaScript au Canada</span>
             <Image
               src="/images/canada.png"
               alt="drapeau canada"
@@ -18,7 +18,7 @@ export default function ContactPage() {
           </div>
         </div>
         <p className="text-md">
-          Je suis un développeur web autodidacte avec deux ans d&apos;expérience,
+          Je suis développeur web autodidacte avec deux ans d&apos;expérience,
           passionné par la création d&apos;applications et de solutions numériques.
           Toujours en quête d&apos;apprentissage, j&apos;explore continuellement de
           nouvelles technologies pour améliorer mes compétences. Actuellement

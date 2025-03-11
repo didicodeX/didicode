@@ -5,7 +5,7 @@ const servicesData = [
     image: "/images/app-development.png",
     title: "Développement Web",
     description:
-      "Création de sites modernes & performants avec React & Next.js, adaptés à tous les écrans.",
+      "Création de sites modernes & performants avec React, adaptés à tous les écrans.",
   },
   {
     image: "/images/api.png",
@@ -25,7 +25,7 @@ export default function Services() {
   return (
     <section>
       <div className="text-center flex flex-col items-center ">
-        <h2 className="text-3xl font-SpaceGrotesk font-bold text-gray-900 dark:text-white mb-16">
+        <h2 className="">
           Comment puis je vous aidez 🤔 ?
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">

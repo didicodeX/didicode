@@ -39,164 +39,104 @@ const linksList = [
 
 export default function ProjectPage() {
   return (
-    <div className="max-w-3xl mx-auto mt-12 px-6 space-y-8">
+    <div className="max-w-3xl mx-auto mt-12 px-6 space-y-12">
       {/* Titre du projet */}
-      <header className="text-center mb-10">
-        {" "}
-        <h1 className="xl:text-4xl lg:text-3xl text-2xl mb-5 font-SpaceGrotesk font-extrabold">
+      <header className="mb-12">
+        <h1 className="text-4xl font-extrabold font-SpaceGrotesk">
           Didimeet - Event Management System
         </h1>
-        <h2 className=" md:text-xl  lg:text-xl xl:text-2xl font-SpaceGrotesk">
+        <h2 className="mt-3 text-xl text-gray-400 font-SpaceGrotesk">
           Une application complète de gestion d'événements où les utilisateurs
           peuvent créer, participer et commenter des événements.
         </h2>
       </header>
       <Divider />
-      {/* Technologies utilisées */}
-      <section>
-        <header className="flex gap-4 items-center pb-4">
-          <Image
-            src={"/images/platform.png"}
-            width={50}
-            height={50}
-            alt="tech icon"
-            className="w-30 object-contain"
-          />{" "}
-          <h2 className="text-xl font-SpaceGrotesk font-semibold">
-            Technologies utilisées
-          </h2>
-        </header>
-        <ul className="flex flex-wrap gap-4 mt-2 items-center">
-          <li>
-            {" "}
-            <Image
-              src={"/images/icons/mongodb.svg"}
-              width={20}
-              height={10}
-              alt="tech icon"
-            />{" "}
-          </li>
-          <li>
-            <Image
-              src={"/images/icons/expressjs.svg"}
-              width={40}
-              height={40}
-              alt="tech icon"
-              className="dark:hidden"
-            />
-            <Image
-              src={"/images/icons/expressjs_dark.svg"}
-              width={40}
-              height={40}
-              alt="tech icon"
-              className="hidden dark:block"
-            />
-          </li>
-          <li>
-            <Image
-              src={"/images/icons/React_dark.svg"}
-              width={40}
-              height={40}
-              alt="tech icon"
-              className="dark:hidden"
-            />
-            <Image
-              src={"/images/icons/React_light.svg"}
-              width={40}
-              height={40}
-              alt="tech icon"
-              className="hidden dark:block"
-            />
-          </li>
-          <li>
-            {" "}
-            <Image
-              src={"/images/icons/nodejs.svg"}
-              width={40}
-              height={40}
-              alt="tech icon"
-            />{" "}
-          </li>
-          <li>
-            {" "}
-            <Image
-              src={"/images/icons/tailwindcss.svg"}
-              width={40}
-              height={40}
-              alt="tech icon"
-            />{" "}
-          </li>
 
-          <li>
-            <Image
-              src={"/images/icons/jwt.svg"}
-              width={40}
-              height={40}
-              alt="tech icon"
-            />{" "}
-          </li>
-        </ul>
-      </section>
+      {/* Technologies utilisées */}
+      <SectionHeader
+        title="Technologies utilisées"
+        imgSrc="/images/platform.png"
+        description="Les technologies utilisées pour développer l'application, garantissant performance et scalabilité."
+      />
+      <TechnologyIcons />
       <Divider />
 
       {/* Fonctionnalités */}
-      <section>
-        <header className="flex gap-4 items-center pb-4">
-          <Image
-            src={"/images/data-integration.png"}
-            width={50}
-            height={50}
-            alt="tech icon"
-            className="w-30 object-contain"
-          />{" "}
-          <h2 className="text-xl font-SpaceGrotesk font-semibold">
-            Fonctionnalités principales
-          </h2>
-        </header>
-        <ListWithIcons items={featuresListe} iconPath="/images/tick.png" />
-      </section>
+      <SectionHeader
+        title="Fonctionnalités principales"
+        imgSrc="/images/data-integration.png"
+        description="Découvrez les principales fonctionnalités offertes par notre plateforme pour une meilleure expérience utilisateur."
+      />
+      <ListWithIcons items={featuresListe} iconPath="/images/tick.png" />
       <Divider />
 
       {/* API et Documentation */}
-      <section>
-        <header className="flex gap-4 items-center pb-4">
-          <Image
-            src={"/images/folders.png"}
-            width={50}
-            height={50}
-            alt="tech icon"
-            className="w-30  object-contain"
-          />{" "}
-          <h2 className="text-xl font-SpaceGrotesk font-semibold">
-            {" "}
-            API & Documentation
-          </h2>
-        </header>
-        <p className="text-gray-600 mt-2 mb-4">
-          L&apos;API a été conçue selon les principes RESTful et respecte les bonnes
-          pratiques SOLID pour une architecture maintenable et évolutive.
-        </p>
-        <ListWithIcons items={docListe} iconPath="/images/tick.png" />
-      </section>
+      <SectionHeader
+        title="API & Documentation"
+        imgSrc="/images/folders.png"
+        description="L'API suit les principes RESTful et est bien documentée pour faciliter son intégration."
+      />
+      <ListWithIcons items={docListe} iconPath="/images/tick.png" />
       <Divider />
 
       {/* Liens utiles */}
-      <section>
-        <header className="flex gap-4 items-center pb-4">
-          <Image
-            src={"/images/web-link.png"}
-            width={50}
-            height={50}
-            alt="tech icon"
-            className="w-30  object-contain"
-          />{" "}
-          <h2 className="text-xl font-SpaceGrotesk font-semibold">
-            Liens utiles
-          </h2>
-        </header>
-        <ListWithLinks links={linksList} iconPath="/images/link.png" />
-      </section>
+      <SectionHeader
+        title="Liens utiles"
+        imgSrc="/images/web-link.png"
+        description="Quelques liens pour explorer le projet, consulter la documentation et tester la démo en ligne."
+      />
+      <ListWithLinks links={linksList} iconPath="/images/link.png" />
       <Divider />
     </div>
+  );
+}
+
+interface HeaderProps {
+  title: string;
+  imgSrc: string;
+  description: string;
+}
+
+function SectionHeader({ title, imgSrc, description }: HeaderProps) {
+  return (
+    <header>
+      <div className="flex gap-4 items-center mb-5">
+        <Image
+          src={imgSrc}
+          width={50}
+          height={50}
+          alt="section icon"
+          className="w-12 object-contain drop-shadow-lg"
+        />
+        <h2 className="text-2xl font-semibold font-SpaceGrotesk">{title}</h2>
+      </div>
+      <p className="text-gray-500 mt-1">{description}</p>
+    </header>
+  );
+}
+
+function TechnologyIcons() {
+  const techIcons = [
+    "/images/icons/expressjs.svg",
+    "/images/icons/React_dark.svg",
+    "/images/icons/nodejs.svg",
+    "/images/icons/tailwindcss.svg",
+    "/images/icons/jwt.svg",
+  ];
+
+  return (
+    <ul className="flex flex-wrap gap-4 items-center">
+      {techIcons.map((icon, index) => (
+        <li key={index}>
+          <Image
+            src={icon}
+            width={30}
+            height={10}
+            alt="tech icon"
+            className="drop-shadow-md"
+          />
+        </li>
+      ))}
+    </ul>
   );
 }

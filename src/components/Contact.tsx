@@ -4,7 +4,7 @@ import ReseauxSociaux from "./ReseauxSociaux";
 export default function Contact() {
   return (
     <section>
-      <div className="grid grid-cols-1 md:justify-items-center md:grid-cols-2 py-16 gap-y-10">
+      <div className="grid grid-cols-1 md:justify-items-center md:grid-cols-2 gap-y-10">
         <div className=" col-span-3 mb-16 text-center">
           <h2>
             Prêt à démarrer 🚀 ?
@@ -18,7 +18,7 @@ export default function Contact() {
           <h2>
             Contact me
           </h2>
-          <div className="flex flex-col gap-y-4 items-center md:items-start">
+          <div className="mt-4 flex flex-col gap-y-4 items-center md:items-start">
             <p>
               Vous avez une question ou un projet en tête ? N&apos;hésitez pas à nous
               contacter.

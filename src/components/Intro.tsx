@@ -8,7 +8,7 @@ export default function ContactPage() {
         <div>
           <h1>Dylane Tano</h1>
           <div className="text-md flex gap-2 items-center md:mt-2">
-            <span className="text-lg sm:text-lg md:text-xl ">Développeur JavaScript au Canada</span>
+            <span className="text-lg sm:text-lg md:text-xl ">Développeur JavaScript</span>
             <Image
               src="/images/canada.png"
               alt="drapeau canada"

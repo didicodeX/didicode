@@ -14,13 +14,13 @@ export default function Contact() {
             moins de 24h !
           </p>
         </div>
-        <div className="flex flex-col col-span-3 md:col-span-1 items-center text-center md:items-start md:text-start">
+        <div className="flex flex-col col-span-3 md:col-span-1 items-center text-center md:items-start md:text-start mr-10">
           <h2>
             Contact me
           </h2>
           <div className="mt-4 flex flex-col gap-y-4 items-center md:items-start">
             <p>
-              Vous avez une question ou un projet en tête ? N&apos;hésitez pas à nous
+              Vous avez une question ou un projet en tête ? N&apos;hésitez pas à me
               contacter.
             </p>
             <p>Localisation: Canada, Bathusrt</p>

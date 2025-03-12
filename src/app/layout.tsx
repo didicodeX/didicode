@@ -17,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <link rel="canonical" href="https://didicode.com" />
       <body className="bg-slate-50 dark:bg-primary-900 dark:text-white font-text text-black flex flex-col min-h-screen">
         {/* Navbar */}
         <ThemeProvider attribute="class" defaultTheme="system">

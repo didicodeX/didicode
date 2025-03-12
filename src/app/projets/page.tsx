@@ -106,9 +106,9 @@ function SectionHeader({ title, imgSrc, description }: HeaderProps) {
           width={50}
           height={50}
           alt="section icon"
-          className="w-12 object-contain drop-shadow-lg"
+          className=" object-contain drop-shadow-lg"
         />
-        <h2 className="text-2xl font-semibold font-SpaceGrotesk">{title}</h2>
+        <h2 className="text-2xl font-semibold font-SpaceGrotesk mb-0">{title}</h2>
       </div>
       <p className="text-gray-500 mt-1">{description}</p>
     </header>

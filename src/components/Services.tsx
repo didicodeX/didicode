@@ -25,7 +25,7 @@ export default function Services() {
   return (
     <section>
       <div className="text-center flex flex-col items-center ">
-        <h2 className="">
+        <h2 className="mb-12">
           Comment puis je vous aidez 🤔 ?
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">

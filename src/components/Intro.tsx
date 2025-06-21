@@ -33,7 +33,7 @@ export default function ContactPage() {
         </div>
       </div>
       <div className="order-1 md:order-none">
-        <Image src="/images/moi-bg.png" alt="moi" width={300} height={300} />
+        <Image src="/images/DYLANE-TANO.png" alt="moi" width={300} height={300} className="rounded-md shadow-lg" />
       </div>
     </section>
   );

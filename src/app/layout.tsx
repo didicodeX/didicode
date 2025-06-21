@@ -1,7 +1,7 @@
-import "./globals.css";
-import Navbar from "../components/NavBar";
 import { ThemeProvider } from "next-themes";
 import Footer from "../components/Footer";
+import Navbar from "../components/NavBar";
+import "./globals.css";
 
 export const metadata = {
   title: "Didicode - Développeur Web",
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <link rel="canonical" href="https://didicode.com" />
-      <body className="bg-slate-50 dark:bg-primary-900 dark:text-white font-text text-black flex flex-col min-h-screen">
+      <body className="bg-slate-100 dark:bg-primary-900 dark:text-white font-text text-black flex flex-col min-h-screen">
         {/* Navbar */}
         <ThemeProvider attribute="class" defaultTheme="system">
           <Navbar />

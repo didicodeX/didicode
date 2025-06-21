@@ -34,7 +34,7 @@
   }
 
   p {
-    @apply text-sm sm:text-base md:text-lg;
+    @apply sm:text-base md:text-lg;
   }
 
   h1 {
@@ -124,6 +124,5 @@ html {
 /* Footer */
 footer {
   text-align: center;
-  font-size: 14px;
   color: #aaa;
 }

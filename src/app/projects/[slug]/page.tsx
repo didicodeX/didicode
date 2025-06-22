@@ -1,71 +1,68 @@
+// app/projects/[slug]/page.tsx
+
 "use client";
 
-import { use } from "react";
+import MediaSlider from "@/components/MediaSlider";
+import ProjectLinks from "@/components/ProjectLinks";
+import Status from "@/components/Status";
+import { projects } from "@/lib/projects";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/lib/projects";
+import { use } from "react";
 
 export default function ProjectDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>; // ✅ obligatoire depuis Next 15.3.4 avec Turbopack
+  params: Promise<{ slug: string }>; // ✅ avec Turbopack
 }) {
-  const { slug } = use(params); // ✅ équivalent à await dans composant client
+  const { slug } = use(params);
+  const project = projects.find((p) => p.slug === slug);
 
-  const project = projects[slug as keyof typeof projects]; // ✅ évite any
-  if (!project) return <div>Projet introuvable</div>;
+  if (!project)
+    return <div className="text-center py-10">❌ Projet introuvable</div>;
 
   return (
-    <main className="max-w-4xl mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-      <p className="mb-6 text-muted-foreground">{project.description}</p>
-
-      <div className="relative w-full h-80 mb-6 rounded-md overflow-hidden shadow-lg">
-        {project.videoUrl ? (
-          <video
-            src={project.videoUrl}
-            controls
-            className="w-full h-full object-cover rounded-md"
-          />
-        ) : (
-          <Image
-            src={project.imageUrl}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
-        )}
+    <main className="flex flex-col gap-8">
+      <div>
+        <Link
+          href="/projects"
+          className="mb-6 inline-flex items-center gap-2 text-sm text-gray-600 transition"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Retour aux projets
+        </Link>
+        <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
+        <Status status={project.status} />
+        <p className="text-muted-foreground mb-8 text-lg">
+          {project.description}
+        </p>
       </div>
 
-      <div className="mb-6">
-        <h2 className="font-semibold text-lg mb-4">Stack utilisée :</h2>
-        <div className="flex gap-8 py-4 overflow-x-auto">
+      {/* Image ou vidéo */}
+      <div>
+        {project.medias.length > 0 && <MediaSlider slides={project.medias} />}
+      </div>
+      {/* Stack */}
+      <div>
+        <h2>Stack utilisée</h2>
+        <div className="flex gap-6 overflow-x-auto py-2">
           {project.stack.map((src, index) => (
             <Image
               key={index}
               src={`/images/icons/${src}`}
-              width={50}
-              height={50}
-              alt="tech icon"
-              className="w-30 h-12 object-contain"
+              width={48}
+              height={48}
+              alt={src.replace(".svg", "")}
+              className="object-contain"
             />
           ))}
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
-        <Link href={project.links.live} target="_blank">
-          🔗 Voir le site live
-        </Link>
-        <Link href={project.links.frontend} target="_blank">
-          🧠 Code Frontend
-        </Link>
-        <Link href={project.links.backend} target="_blank">
-          ⚙️ Code Backend
-        </Link>
-        <Link href={project.links.figma} target="_blank">
-          🎨 Voir la maquette
-        </Link>
+      {/* Liens */}
+      <div className="space-y-3 text-base font-medium ">
+        <ProjectLinks links={project.links} />
       </div>
     </main>
   );

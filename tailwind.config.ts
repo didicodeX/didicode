@@ -42,8 +42,9 @@ export default {
         'link-hover': '#ffffff',
       },
       fontFamily: {
-        title: ["Space Grotesk", "serif"],
-        text: ["Geist", "serif"],
+        title: ["Sora", "sans-serif"],
+        Sora: ["Sora", "sans-serif"],
+        text: ["Sora", "sans-serif"],
         special: ["Roboto", "sans-serif"],
         chillax: ["Chillax", "sans-serif"],
         Geist: ["Geist", "sans-serif"],

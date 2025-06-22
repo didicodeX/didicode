@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="flex flex-col col-span-3 md:col-span-1 md:items-start md:text-start mr-10">
           <div>
             <h2>
-              Contact me
+              Contactez moi
             </h2>
               <p>
                 Vous avez une question ou un projet en tête ? N&apos;hésitez pas à me

@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full dark:bg-transparent bg-slate-100 backdrop-blur-md z-50">
+    <nav className="fixed top-0 py-2 w-full dark:bg-transparent bg-slate-100/50 backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -21,16 +21,21 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="flex text-sm gap-2">
-            {/* <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center">
               <Link href="/" className="py-2 rounded transition">
                 Accueil
               </Link>
             </div>
             <div className="flex justify-center items-center">
-              <Link href="/blog" className="py-2 rounded transition">
-                Blog
+              <Link href="/about" className="py-2 rounded transition">
+                A propos
               </Link>
-            </div> */}
+            </div>
+            <div className="flex justify-center items-center">
+              <Link href="/projects" className="py-2 rounded transition">
+                Projets
+              </Link>
+            </div>
             <ThemeSwitcher />
           </div>
 

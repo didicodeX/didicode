@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
+import { projects } from "@/lib/projects";
 
 export default function Projects() {
   return (
@@ -6,22 +7,23 @@ export default function Projects() {
       <div className="flex flex-col">
         <div className="mb-10">
           <h2>Mes Projets</h2>
-          <p>Je crée des applications pour être rentables et aider les gens avec mes compétences.</p>
+          <p>
+            Je crée des applications pour être rentables et aider les gens avec
+            mes compétences.
+          </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          <ProjectCard
-          name="BADAM"
-            title="badam"
-            description="Plateforme d’apprentissage collaboratif entre formateurs et apprenants."
-            imageUrl="/images/projects/badam.png"
-          />
-
-          <ProjectCard
-          name="Hommage"
-            title="hommage"
-            description="Site de dons funéraires respectueux pour honorer un proche."
-            imageUrl="/images/projects/hommage.png"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) =>
+            project.status !== "wip" && (
+              <ProjectCard
+                key={project.slug}
+                slug={project.slug}
+                title={project.title}
+                description={project.description}
+                medias={project.medias}
+              />
+            )
+          )}
         </div>
       </div>
     </section>

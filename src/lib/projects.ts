@@ -65,12 +65,12 @@ export const projects = [
     description:
       "Application de facturation moderne pour indépendants. En cours de conception (maquette uniquement).",
     medias: [
-      "/images/projects/facturier/home.png",
-      "/images/projects/facturier/invoices.png",
-      "/images/projects/facturier/customers.png",
-      "/images/projects/facturier/newInvoice.png",
+      "/images/projects/facturier/Home.png",
+      "/images/projects/facturier/Invoices.png",
+      "/images/projects/facturier/Customers.png",
+      "/images/projects/facturier/NewInvoice.png",
     ],
-    stack: ["Nextjs.svg", "typescript.svg", "tailwindcss.svg", "stripe.svg"],
+    stack: ["nextjs.svg", "typescript.svg", "tailwindcss.svg", "stripe.svg"],
     status: "wip",
     links: {
       live: "",

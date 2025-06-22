@@ -1,5 +1,5 @@
-import Button from "./Button";
 import Image from "next/image";
+import Button from "./Button";
 
 export default function ContactPage() {
   return (
@@ -8,7 +8,9 @@ export default function ContactPage() {
         <div>
           <h1>Dylane Tano</h1>
           <div className="text-md flex gap-2 items-center md:mt-2">
-            <span className="text-lg sm:text-lg md:text-xl ">Développeur JavaScript</span>
+            <span className="text-lg sm:text-lg md:text-xl ">
+              Développeur JavaScript
+            </span>
             <Image
               src="/images/canada.png"
               alt="drapeau canada"
@@ -17,13 +19,13 @@ export default function ContactPage() {
             />
           </div>
         </div>
-        <p className="text-md">
-          Je suis développeur web autodidacte avec deux ans d&apos;expérience,
-          passionné par la création d&apos;applications et de solutions numériques.
-          Toujours en quête d&apos;apprentissage, j&apos;explore continuellement de
-          nouvelles technologies pour améliorer mes compétences. Actuellement
-          impliqué dans plusieurs projets, je reste ouvert à de nouvelles
-          opportunités pour collaborer et apporter mon expertise.
+        <p>
+          Développeur web passionné par les technologies JavaScript, je maîtrise
+          React et Node.js et j'ai mené à bien plusieurs projets concrets, dont
+          une plateforme d'apprentissage et un site de dons en ligne. Diplômé du
+          CCNB en 2025, je suis à la recherche d'un premier poste où je pourrai
+          continuer à apprendre, contribuer activement à des projets, et évoluer
+          dans une équipe dynamique.
         </p>
         <div className="grid md:flex">
           {/* 👉 Lien autour du bouton */}
@@ -33,7 +35,13 @@ export default function ContactPage() {
         </div>
       </div>
       <div className="order-1 md:order-none">
-        <Image src="/images/DYLANE-TANO.png" alt="moi" width={300} height={300} className="rounded-md shadow-lg" />
+        <Image
+          src="/images/DYLANE-TANO.png"
+          alt="moi"
+          width={400}
+          height={300}
+          className="rounded-md shadow-lg"
+        />
       </div>
     </section>
   );

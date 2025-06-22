@@ -51,6 +51,10 @@
     @apply text-lg sm:text-lg md:text-2xl font-semibold font-Sora;
   }
 
+  h3 {
+    @apply text-base sm:text-lg md:text-xl font-semibold font-Sora;
+  }
+
   header h2 {
     @apply text-lg sm:text-lg md:text-xl font-semibold font-Sora;
   }

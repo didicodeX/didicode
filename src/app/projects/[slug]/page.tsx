@@ -32,7 +32,7 @@ export default function ProjectDetailPage({
           <ArrowLeft className="w-4 h-4" />
           Retour aux projets
         </Link>
-        <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
+        <h1 >{project.title}</h1>
         <Status status={project.status} />
         <p className="text-muted-foreground mb-8 text-lg">
           {project.description}

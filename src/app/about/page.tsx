@@ -1,31 +1,51 @@
 import Button from "@/components/Button";
-import Image from "next/image";
 import Link from "next/link";
+import { Timeline } from "@/components/Timeline";
+import { Laptop, GraduationCap, Rocket } from "lucide-react";
+
+// Données de la timeline
+const timelineItems = [
+  {
+    year: "Fév. 2023",
+    title: "Apprentissage autodidacte",
+    description:
+      "Découverte du développement web via HTML, CSS, JavaScript. Premiers projets personnels.",
+    icon: <Laptop className="w-4 h-4" />,
+  },
+  {
+    year: "Sept. 2023",
+    title: "Entrée au CCNB",
+    description:
+      "Formation axée sur le C++, C#, algorithmique. Le web a été brièvement introduit.",
+    icon: <GraduationCap className="w-4 h-4" />,
+  },
+  {
+    year: "Juin 2025",
+    title: "Diplôme obtenu",
+    description:
+      "Fin de ma formation et passage vers la vie professionnelle en tant que développeur.",
+    icon: <Rocket className="w-4 h-4" />,
+  },
+];
+
 
 export default function AboutPage() {
   return (
-    <main>
-      {/* Titre */}
-      <h1 className="text-4xl font-bold mb-6">À propos</h1>
+    <main className="flex flex-col gap-6">
+      <h1 >À propos</h1>
 
-      {/* Intro */}
-      <p className="text-lg leading-8 mb-8">
+      <p>
         Je suis diplômé du{" "}
         <strong>Collège communautaire du Nouveau-Brunswick (CCNB)</strong>, où
         j’ai étudié de <strong>septembre 2023 à juin 2025</strong>. Ce parcours
         m’a permis d’approfondir mes connaissances techniques tout en menant
-        plusieurs projets concrets.
+        plusieurs projets concrets. La formation était principalement axée sur
+        le C++ et le C#, avec une brève introduction au développement web (HTML
+        , JavaScript et PHP).
       </p>
 
       {/* Image + description */}
       <div className="flex flex-col md:flex-row items-start gap-6 mb-12">
-        <Image
-          src="/images/DYLANE-TANO.png"
-          alt="Photo de Dylane"
-          width={160}
-          height={160}
-          className="rounded-xl object-cover"
-        />
         <div className="space-y-4">
           <p>
             Je me spécialise dans la stack <strong>React / Node.js</strong>,
@@ -33,9 +53,8 @@ export default function AboutPage() {
             l’expérience utilisateur et la maintenabilité des projets.
           </p>
           <p>
-            J’ai travaillé sur des projets comme
+            J’ai travaillé sur des projets comme{" "}
             <strong>
-              {" "}
               <Link
                 target="_blank"
                 href={`https://www.badam.app`}
@@ -43,11 +62,10 @@ export default function AboutPage() {
                 className="inline underline hover:no-underline"
               >
                 BADAM
-              </Link>{" "}
-            </strong>
-            (plateforme de partage de connaissances),
+              </Link>
+            </strong>{" "}
+            (plateforme de partage de connaissances),{" "}
             <strong>
-              {" "}
               <Link
                 target="_blank"
                 href={`https://hommage-whvr.vercel.app/`}
@@ -55,52 +73,28 @@ export default function AboutPage() {
                 className="inline underline hover:no-underline"
               >
                 Hommage
-              </Link>{" "}
+              </Link>
             </strong>{" "}
             (site de dons funéraires) et je conçois actuellement un outil de
             facturation en ligne.
           </p>
+          <p>
+            Je suis à la recherche d'un premier poste de développeur web où je
+            pourrai continuer à apprendre, contribuer activement à des projets
+            et évoluer dans une équipe dynamique. Je suis passionné par le
+            développement web et prêt à relever de nouveaux défis.
+          </p>
         </div>
       </div>
 
-      {/* Timeline */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">🗓️ Mon parcours</h2>
-        <ul className="space-y-2 border-l-2 border-gray-300 pl-4 text-gray-700">
-          <li>
-            <span className="font-semibold">Fév. 2023</span> — Début de
-            l’apprentissage autodidacte (HTML, CSS, JavaScript)
-          </li>
-          <li>
-            <span className="font-semibold">Sept. 2023</span> — Entrée au CCNB
-            (C++, C#, algo)
-          </li>
-          <li>
-            <span className="font-semibold">2024</span> — Création de BADAM
-            (plateforme d’apprentissage)
-          </li>
-          <li>
-            <span className="font-semibold">2025</span> — Stage chez Innovation
-            Technologique (remote)
-          </li>
-          <li>
-            <span className="font-semibold">2025</span> — Lancement de Hommage
-            (site de dons)
-          </li>
-          <li>
-            <span className="font-semibold">2025</span> — Début de Facturier
-            (gestion de factures)
-          </li>
-          <li>
-            <span className="font-semibold">Juin 2025</span> — Diplôme du CCNB
-            et transition vers le monde pro
-          </li>
-        </ul>
-      </div>
+      {/* Timeline moderne */}
+      <section className="space-y-8 mb-12">
+        <h2 className="text-2xl font-bold flex gap-2 items-start"> Mon parcours</h2>
+        <Timeline items={timelineItems} />
+      </section>
 
       {/* CV */}
-      <div className="grid md:flex mt-6">
-        {/* 👉 Lien autour du bouton */}
+      <div>
         <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf">
           <Button text="Téléchargez mon CV" />
         </a>

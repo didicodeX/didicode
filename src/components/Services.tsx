@@ -9,7 +9,7 @@ const servicesData = [
   },
   {
     image: "/images/api.png",
-    title: "Développement d'API REST",
+    title: "Création d'API REST",
     description:
       "Création d'API REST robustes en Node.js avec une architecture modulaire.",
   },
@@ -17,25 +17,25 @@ const servicesData = [
     image: "/images/graphic-designer.png",
     title: "UI/UX Design",
     description:
-      "Conception de maquettes interactives et prototypage d'interfaces, à l'aide de Figma et d’un design system cohérent",
+      "Conception de maquettes interactives et prototypage d'interfaces, à l'aide de Figma.",
   },
 ];
 
 export default function Services() {
   return (
-    <section>
-      <div className="flex flex-col">
-        <div className="mb-12">
-          <h2>Comment puis je vous aidez ?</h2>
-          <p>Je peux créer des expériences parfaites pour votre client, en créant toutes les applications à partir de zéro.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesData.map((service, index) => (
-            <Service key={index} {...service} />
-          ))}
-        </div>
+    <section className="flex flex-col">
+      <div className="mb-10">
+        <h2>Comment puis-je vous aider ?</h2>
+        <p>
+          Je crée des expériences sur mesure pour vos utilisateurs, à partir de
+          zéro.
+        </p>
+      </div>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 place-items-center">
+        {servicesData.map((service, index) => (
+          <Service key={index} {...service} />
+        ))}
       </div>
     </section>
   );
 }
-

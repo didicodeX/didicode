@@ -18,13 +18,13 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <link rel="canonical" href="https://didicode.com" />
-      <body className="bg-slate-100 dark:bg-primary-900 dark:text-white font-text text-black flex flex-col min-h-screen pt-4 md:pt-8 lg:pt-16">
+      <body className="bg-primary-50 dark:bg-primary-900 dark:text-primary-50 font-text text-primary-900 flex flex-col min-h-screen pt-4 md:pt-8 lg:pt-16">
         {/* Navbar */}
         <ThemeProvider attribute="class" defaultTheme="system">
           <Navbar />
 
           {/* Contenu principal qui prend tout l’espace restant */}
-          <main className="flex-1  max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full mt-20">
+          <main className="flex-1  max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 w-full mt-20">
             {children}
           </main>
           {/* Footer qui reste en bas */}

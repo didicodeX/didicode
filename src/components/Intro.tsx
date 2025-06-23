@@ -1,14 +1,24 @@
 import Image from "next/image";
 import Button from "./Button";
 
-export default function ContactPage() {
+export default function IntroPage() {
   return (
-    <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
-      <div className="flex flex-col gap-7 order-2 md:order-none">
+    <section className="flex flex-col gap-4">
         <div>
-          <h1>Dylane Tano</h1>
-          <div className="text-md flex gap-2 items-center md:mt-2">
-            <span className="text-lg sm:text-lg md:text-xl ">
+          <div className="flex gap-2 items-center">
+            <div className="w-16 h-16 rounded-full overflow-hidden">
+              <Image
+                src="/images/me.png"
+                alt="moi"
+                width={64}
+                height={64}
+                className="w-full h-full object-cover rounded-full shadow-lg"
+              />
+            </div>
+            <h2 >Dylane Tano</h2>
+          </div>
+          <div className="text-md flex gap-2 items-center mt-2 md:mt-4">
+            <span className="text-lg sm:text-lg md:text-xl font-semibold">
               Développeur JavaScript
             </span>
             <Image
@@ -33,16 +43,6 @@ export default function ContactPage() {
             <Button text="Téléchargez mon CV" />
           </a>
         </div>
-      </div>
-      <div className="order-1 md:order-none">
-        <Image
-          src="/images/DYLANE-TANO.png"
-          alt="moi"
-          width={400}
-          height={300}
-          className="rounded-md shadow-lg"
-        />
-      </div>
     </section>
   );
 }

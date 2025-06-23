@@ -15,11 +15,11 @@ export default function MediaSlider({ slides }: MediaSliderProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const scrollLeft = () => {
-    containerRef.current?.scrollBy({ left: -560, behavior: "smooth" });
+    containerRef.current?.scrollBy({ left: -340, behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    containerRef.current?.scrollBy({ left: 560, behavior: "smooth" });
+    containerRef.current?.scrollBy({ left: 340, behavior: "smooth" });
   };
 
   const handleNext = () => {
@@ -59,7 +59,7 @@ export default function MediaSlider({ slides }: MediaSliderProps) {
             <div
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className="flex-none w-[550px] h-[270px] rounded-lg overflow-hidden bg-black shadow cursor-zoom-in"
+              className="flex-none w-[350px] h-[250px] rounded-lg overflow-hidden bg-black shadow cursor-zoom-in"
             >
               {isVideo ? (
                 <video

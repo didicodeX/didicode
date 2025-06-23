@@ -29,11 +29,11 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="py-16 text-center flex items-center justify-center gap-8">
-        <p>&copy; 2025 Dylane Tano. Tous droits réservés.</p>
+      <div className="py-16 text-center flex items-center justify-center gap-4 ">
+        <small>&copy; 2025 Dylane Tano. Tous droits réservés.</small>
         <a
           target="_blank"
-          className="text-blue-600 hover:underline"
+          className="text-blue-600 hover:underline text-sm"
           href="https://didi-code.vercel.app/"
         >
           V1

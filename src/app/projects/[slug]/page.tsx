@@ -32,7 +32,7 @@ export default function ProjectDetailPage({
           <ArrowLeft className="w-4 h-4" />
           Retour aux projets
         </Link>
-        <h1 >{project.title}</h1>
+        <h1 className="mb-2">{project.title}</h1>
         <Status status={project.status} />
         <p className="text-muted-foreground mb-8 text-lg">
           {project.description}
@@ -45,7 +45,7 @@ export default function ProjectDetailPage({
       </div>
       {/* Stack */}
       <div>
-        <h2>Stack utilisée</h2>
+        <h2 className="mb-2">Stack utilisée</h2>
         <div className="flex gap-6 overflow-x-auto py-2">
           {project.stack.map((src, index) => (
             <Image

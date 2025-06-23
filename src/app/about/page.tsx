@@ -1,7 +1,8 @@
 import Button from "@/components/Button";
-import Link from "next/link";
 import { Timeline } from "@/components/Timeline";
-import { Laptop, GraduationCap, Rocket } from "lucide-react";
+import { GraduationCap, Laptop, Rocket } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 // Données de la timeline
 const timelineItems = [
@@ -28,32 +29,35 @@ const timelineItems = [
   },
 ];
 
-
 export default function AboutPage() {
   return (
-    <main className="flex flex-col gap-6">
-      <h1 >À propos</h1>
-
-      <p>
-        Je suis diplômé du{" "}
-        <strong>Collège communautaire du Nouveau-Brunswick (CCNB)</strong>, où
-        j’ai étudié de <strong>septembre 2023 à juin 2025</strong>. Ce parcours
-        m’a permis d’approfondir mes connaissances techniques tout en menant
-        plusieurs projets concrets. La formation était principalement axée sur
-        le C++ et le C#, avec une brève introduction au développement web (HTML
-        , JavaScript et PHP).
-      </p>
+    <main className="flex flex-col gap-7">
+      <h1>À propos</h1>
 
       {/* Image + description */}
       <div className="flex flex-col md:flex-row items-start gap-6 mb-12">
+        <Image
+          src="/images/DYLANE-TANO.png"
+          alt="moi"
+          width={400}
+          height={300}
+          className="rounded-lg object-cover shadow-lg"
+        />
         <div className="space-y-4">
           <p>
-            Je me spécialise dans la stack <strong>React / Node.js</strong>,
-            avec une attention particulière à l’architecture du code,
-            l’expérience utilisateur et la maintenabilité des projets.
+            Je suis diplômé du{" "}
+            <strong>Collège communautaire du Nouveau-Brunswick (CCNB)</strong>,
+            où j'ai étudié de <strong>septembre 2023 à juin 2025</strong>. La
+            formation était principalement axée sur le C++ et le C#, avec une
+            brève introduction au développement web (HTML , JavaScript et PHP).
           </p>
           <p>
-            J’ai travaillé sur des projets comme{" "}
+            Je me spécialise dans la stack <strong>React / Node.js</strong>,
+            avec une attention particulière à l'architecture du code,
+            l'expérience utilisateur et la maintenabilité des projets.
+          </p>
+          <p>
+            J'ai travaillé sur des projets comme{" "}
             <strong>
               <Link
                 target="_blank"
@@ -78,18 +82,15 @@ export default function AboutPage() {
             (site de dons funéraires) et je conçois actuellement un outil de
             facturation en ligne.
           </p>
-          <p>
-            Je suis à la recherche d'un premier poste de développeur web où je
-            pourrai continuer à apprendre, contribuer activement à des projets
-            et évoluer dans une équipe dynamique. Je suis passionné par le
-            développement web et prêt à relever de nouveaux défis.
-          </p>
         </div>
       </div>
 
       {/* Timeline moderne */}
       <section className="space-y-8 mb-12">
-        <h2 className="text-2xl font-bold flex gap-2 items-start"> Mon parcours</h2>
+        <h2 className="text-2xl font-bold flex gap-2 items-start">
+          {" "}
+          Mon parcours
+        </h2>
         <Timeline items={timelineItems} />
       </section>
 

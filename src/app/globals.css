@@ -40,7 +40,7 @@
   }
 
   p {
-    @apply sm:text-base md:text-lg;
+    @apply sm:text-base md:text-lg text-primary-700 dark:text-primary-50;
   }
 
   h1 {
@@ -53,6 +53,14 @@
 
   h3 {
     @apply text-base sm:text-lg md:text-xl font-semibold font-Sora;
+  }
+
+  h4 {
+    @apply text-sm sm:text-base md:text-lg font-semibold font-Sora;
+  }
+
+  small {
+    @apply text-xs sm:text-sm md:text-base text-primary-700 dark:text-primary-50;
   }
 
   header h2 {

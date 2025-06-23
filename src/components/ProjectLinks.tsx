@@ -15,22 +15,22 @@ interface ProjectLinksProps {
 const linksData = [
   {
     key: "live",
-    label: "Voir le site live",
+    label: "View Live Site",
     icon: ExternalLink,
   },
   {
     key: "frontend",
-    label: "Code Frontend",
+    label: "Frontend Code",
     icon: Code2,
   },
   {
     key: "backend",
-    label: "Code Backend",
+    label: "Backend Code",
     icon: ServerCog,
   },
   {
     key: "figma",
-    label: "Voir la maquette Figma",
+    label: "View Figma Design",
     icon: Figma,
   },
 ];

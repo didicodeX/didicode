@@ -6,10 +6,9 @@ export default function Projects() {
     <section>
       <div className="flex flex-col">
         <div className="mb-10">
-          <h2>Mes Projets</h2>
+          <h2>My Projects</h2>
           <p>
-            Je crée des applications pour être rentables et aider les gens avec
-            mes compétences.
+            I build applications to be profitable and help people through my skills.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

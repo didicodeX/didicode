@@ -1,10 +1,9 @@
-// lib/projects.ts
 export const projects = [
   {
     slug: "badam",
     title: "BADAM",
     description:
-      "Plateforme d'apprentissage collaboratif pensée pour faciliter l'échange de compétences entre formateurs et apprenants.",
+      "Collaborative learning platform designed to facilitate skill sharing between trainers and learners.",
     medias: [
       "https://res.cloudinary.com/duvjrq5ca/video/upload/v1750517187/2025-05-14_13-29-34_vnn5ui.mp4",
       "/images/projects/badam/CreateFormation.png",
@@ -34,7 +33,7 @@ export const projects = [
     slug: "hommage",
     title: "Hommage",
     description:
-      "Site de dons funéraires respectueux pour honorer un proche. Il permet de créer une page simple et élégante pour recevoir des dons via Stripe.",
+      "Respectful funeral donation website to honor a loved one. Allows you to create a simple, elegant page to receive donations via Stripe.",
     medias: [
       "/images/projects/hommage/Home.png",
       "/images/projects/hommage/HomeMobile.png",
@@ -63,7 +62,7 @@ export const projects = [
     slug: "facturier",
     title: "Facturier",
     description:
-      "Application de facturation moderne pour indépendants. En cours de conception (maquette uniquement).",
+      "Modern invoicing app for freelancers. Currently in design phase (Figma only).",
     medias: [
       "/images/projects/facturier/Home.png",
       "/images/projects/facturier/Invoices.png",
@@ -76,7 +75,8 @@ export const projects = [
       live: "",
       frontend: "",
       backend: "",
-      figma: "https://www.figma.com/file/xyz123/Facturier-UI?type=design",
+      figma:
+        "https://www.figma.com/design/SySNQRTt4ZxOhtQw2glTOU/UI-Web---Facturier?node-id=132-1418&t=1i3lVxNQZVSHgxFu-1",
     },
   },
 ];

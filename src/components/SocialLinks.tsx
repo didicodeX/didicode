@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ReseauxSociaux() {
+export default function SocialLinks() {
   return (
     <div className="bg-red flex gap-4 items-center">
       <a href="https://github.com/didicodeX" target="_blank" rel="noopener noreferrer">

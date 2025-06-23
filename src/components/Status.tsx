@@ -9,7 +9,7 @@ export default function Status({ status }: { status: string }) {
       }
     `}
     >
-      {status === "done" ? "Terminé" : "En cours"}
+      {status === "done" ? "Completed" : "In progress"}
     </span>
   );
 }

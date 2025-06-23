@@ -14,13 +14,13 @@ import { use } from "react";
 export default function ProjectDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>; // ✅ avec Turbopack
+  params: Promise<{ slug: string }>; 
 }) {
   const { slug } = use(params);
   const project = projects.find((p) => p.slug === slug);
 
   if (!project)
-    return <div className="text-center py-10">❌ Projet introuvable</div>;
+    return <div className="text-center py-10">❌ Project not found</div>;
 
   return (
     <main className="flex flex-col gap-8">
@@ -30,7 +30,7 @@ export default function ProjectDetailPage({
           className="mb-6 inline-flex items-center gap-2 text-sm text-gray-600 transition"
         >
           <ArrowLeft className="w-4 h-4" />
-          Retour aux projets
+          Back to projects
         </Link>
         <h1 className="mb-2">{project.title}</h1>
         <Status status={project.status} />
@@ -39,13 +39,14 @@ export default function ProjectDetailPage({
         </p>
       </div>
 
-      {/* Image ou vidéo */}
+      {/* Media (image or video) */}
       <div>
         {project.medias.length > 0 && <MediaSlider slides={project.medias} />}
       </div>
-      {/* Stack */}
+
+      {/* Tech stack */}
       <div>
-        <h2 className="mb-2">Stack utilisée</h2>
+        <h2 className="mb-2">Tech Stack</h2>
         <div className="flex gap-6 overflow-x-auto py-2">
           {project.stack.map((src, index) => (
             <Image
@@ -60,8 +61,8 @@ export default function ProjectDetailPage({
         </div>
       </div>
 
-      {/* Liens */}
-      <div className="space-y-3 text-base font-medium ">
+      {/* Links */}
+      <div className="space-y-3 text-base font-medium">
         <ProjectLinks links={project.links} />
       </div>
     </main>

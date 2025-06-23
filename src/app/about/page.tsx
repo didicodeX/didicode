@@ -4,27 +4,27 @@ import { GraduationCap, Laptop, Rocket } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Données de la timeline
+// Timeline data
 const timelineItems = [
   {
-    year: "Fév. 2023",
-    title: "Apprentissage autodidacte",
+    year: "Feb. 2023",
+    title: "Self-taught Journey",
     description:
-      "Découverte du développement web via HTML, CSS, JavaScript. Premiers projets personnels.",
+      "Discovered web development through HTML, CSS, and JavaScript. Built my first personal projects.",
     icon: <Laptop className="w-4 h-4" />,
   },
   {
     year: "Sept. 2023",
-    title: "Entrée au CCNB",
+    title: "Started at CCNB",
     description:
-      "Formation axée sur le C++, C#, algorithmique. Le web a été brièvement introduit.",
+      "Studied C++, C#, and algorithms. Web development was briefly introduced.",
     icon: <GraduationCap className="w-4 h-4" />,
   },
   {
-    year: "Juin 2025",
-    title: "Diplôme obtenu",
+    year: "June 2025",
+    title: "Graduation",
     description:
-      "Fin de ma formation et passage vers la vie professionnelle en tant que développeur.",
+      "Completed my degree and transitioned into the professional world as a developer.",
     icon: <Rocket className="w-4 h-4" />,
   },
 ];
@@ -32,32 +32,32 @@ const timelineItems = [
 export default function AboutPage() {
   return (
     <main className="flex flex-col gap-7">
-      <h1>À propos</h1>
+      <h1>About</h1>
 
       {/* Image + description */}
       <div className="flex flex-col md:flex-row items-start gap-6 mb-12">
         <Image
           src="/images/DYLANE-TANO.png"
-          alt="moi"
+          alt="me"
           width={400}
           height={300}
           className="rounded-lg object-cover shadow-lg"
         />
         <div className="space-y-4">
           <p>
-            Je suis diplômé du{" "}
+            I graduated from{" "}
             <strong>Collège communautaire du Nouveau-Brunswick (CCNB)</strong>,
-            où j'ai étudié de <strong>septembre 2023 à juin 2025</strong>. La
-            formation était principalement axée sur le C++ et le C#, avec une
-            brève introduction au développement web (HTML , JavaScript et PHP).
+            where I studied from <strong>September 2023 to June 2025</strong>.
+            The program was focused on C++ and C#, with a brief introduction to
+            web development (HTML, JavaScript, and PHP).
           </p>
           <p>
-            Je me spécialise dans la stack <strong>React / Node.js</strong>,
-            avec une attention particulière à l'architecture du code,
-            l'expérience utilisateur et la maintenabilité des projets.
+            I specialize in the <strong>React / Node.js</strong> stack, with a
+            strong focus on code architecture, user experience, and
+            maintainability.
           </p>
           <p>
-            J'ai travaillé sur des projets comme{" "}
+            I’ve worked on projects such as{" "}
             <strong>
               <Link
                 target="_blank"
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 BADAM
               </Link>
             </strong>{" "}
-            (plateforme de partage de connaissances),{" "}
+            (a collaborative learning platform),{" "}
             <strong>
               <Link
                 target="_blank"
@@ -79,25 +79,22 @@ export default function AboutPage() {
                 Hommage
               </Link>
             </strong>{" "}
-            (site de dons funéraires) et je conçois actuellement un outil de
-            facturation en ligne.
+            (a respectful funeral donation site), and I'm currently designing an
+            online invoicing tool.
           </p>
         </div>
       </div>
 
-      {/* Timeline moderne */}
+      {/* Timeline */}
       <section className="space-y-8 mb-12">
-        <h2 className="text-2xl font-bold flex gap-2 items-start">
-          {" "}
-          Mon parcours
-        </h2>
+        <h2 className="text-2xl font-bold flex gap-2 items-start">My Journey</h2>
         <Timeline items={timelineItems} />
       </section>
 
       {/* CV */}
       <div>
         <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf">
-          <Button text="Téléchargez mon CV" />
+          <Button text="Download My CV" />
         </a>
       </div>
     </main>

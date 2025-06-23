@@ -3,21 +3,21 @@ import Service from "./Service";
 const servicesData = [
   {
     image: "/images/app-development.png",
-    title: "Développement Web",
+    title: "Web Development",
     description:
-      "Création de sites modernes & performants avec React, adaptés à tous les écrans.",
+      "Building modern and high-performance websites with React, fully responsive across all devices.",
   },
   {
     image: "/images/api.png",
-    title: "Création d'API REST",
+    title: "REST API Development",
     description:
-      "Création d'API REST robustes en Node.js avec une architecture modulaire.",
+      "Creating robust REST APIs using Node.js with a clean and modular architecture.",
   },
   {
     image: "/images/graphic-designer.png",
     title: "UI/UX Design",
     description:
-      "Conception de maquettes interactives et prototypage d'interfaces, à l'aide de Figma.",
+      "Designing interactive mockups and prototyping user interfaces using Figma.",
   },
 ];
 
@@ -25,10 +25,9 @@ export default function Services() {
   return (
     <section className="flex flex-col">
       <div className="mb-10">
-        <h2>Comment puis-je vous aider ?</h2>
+        <h2>How can I help you?</h2>
         <p>
-          Je crée des expériences sur mesure pour vos utilisateurs, à partir de
-          zéro.
+          I craft tailored user experiences from scratch, aligned with your goals.
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 place-items-center">

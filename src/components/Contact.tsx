@@ -1,5 +1,5 @@
 // import ContactForm from "./ContactForm";
-import ReseauxSociaux from "./ReseauxSociaux";
+import SocialLinks from "./SocialLinks"; // (Renommage suggéré pour rester en anglais)
 
 export default function Contact() {
   return (
@@ -8,16 +8,15 @@ export default function Contact() {
         <div className="flex flex-col col-span-3 md:col-span-1 md:items-start md:text-start mr-10">
           <div>
             <h2>
-              Contactez moi
+              Contact Me
             </h2>
-              <p>
-                Vous avez une question ou un projet en tête ? N&apos;hésitez pas à me
-                contacter.
-              </p>
+            <p>
+              Have a question or a project in mind? Feel free to reach out.
+            </p>
           </div>
           <div className="mt-4 flex flex-col gap-y-4 md:items-start">
-            <p>Localisation: Canada, Moncton</p>
-            <ReseauxSociaux />
+            <p>Location: Canada, Moncton</p>
+            <SocialLinks />
           </div>
         </div>
         {/* <ContactForm /> */}

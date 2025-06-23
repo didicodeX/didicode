@@ -1,4 +1,4 @@
-"use client"; // Obligatoire pour Next.js 13+ (rendu côté client)
+"use client"; // Required for Next.js 13+ (client-side rendering)
 import { useState, useEffect } from "react";
 import { ArrowBigUpDash } from "lucide-react";
 
@@ -7,7 +7,7 @@ export default function Footer() {
 
   useEffect(() => {
     let ticking = false;
-  
+
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
@@ -17,11 +17,10 @@ export default function Footer() {
         ticking = true;
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -30,7 +29,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="py-16 text-center flex items-center justify-center gap-4 ">
-        <small>&copy; 2025 Dylane Tano. Tous droits réservés.</small>
+        <small>&copy; 2025 Dylane Tano. All rights reserved.</small>
         <a
           target="_blank"
           className="text-blue-600 hover:underline text-sm"
@@ -42,7 +41,7 @@ export default function Footer() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 z-10 p-2 text-slate-800 rounded dark:text-white bg-secondary-100  dark:bg-primary-800"
+          className="fixed bottom-5 right-5 z-10 p-2 text-slate-800 rounded dark:text-white bg-secondary-100 dark:bg-primary-800"
         >
           <ArrowBigUpDash />
         </button>

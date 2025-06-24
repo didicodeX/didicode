@@ -86,17 +86,18 @@ export default function AboutPage() {
       </div>
 
       {/* Timeline */}
-      <section className="space-y-8 mb-12">
+      <section className="space-y-8">
         <h2 className="text-2xl font-bold flex gap-2 items-start">My Journey</h2>
         <Timeline items={timelineItems} />
-      </section>
 
       {/* CV */}
-      <div>
+      <div className="flex justify-center">
         <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf">
           <Button text="Download My CV" />
         </a>
       </div>
+      </section>
+
     </main>
   );
 }

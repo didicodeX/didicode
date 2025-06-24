@@ -30,13 +30,15 @@ export default function Footer() {
     <footer>
       <div className="py-16 text-center flex items-center justify-center gap-4 ">
         <small>&copy; 2025 Dylane Tano. All rights reserved.</small>
-        <a
-          target="_blank"
-          className="text-blue-600 hover:underline text-sm"
-          href="https://didi-code.vercel.app/"
-        >
-          V1
-        </a>
+        <small>
+          <a
+            target="_blank"
+            className="text-blue-600 hover:underline"
+            href="https://didi-code.vercel.app/"
+          >
+            V1
+          </a>
+        </small>
       </div>
       {showButton && (
         <button

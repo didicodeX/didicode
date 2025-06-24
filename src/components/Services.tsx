@@ -5,7 +5,7 @@ const servicesData = [
     image: "/images/app-development.png",
     title: "Web Development",
     description:
-      "Building modern and high-performance websites with React, fully responsive across all devices.",
+      "Building modern and high-performance websites with React, fully responsive.",
   },
   {
     image: "/images/api.png",

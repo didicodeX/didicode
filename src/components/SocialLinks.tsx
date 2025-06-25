@@ -22,11 +22,11 @@ export default function SocialLinks() {
           className="hidden dark:block"
         />
       </a>
-      <a href="mailto:dylane@didicode.com">
-        <Image src="images/icons/gmail.svg" alt="github" width={28} height={28} />
+      <a href="mailto:dylane@didicode.com" target="_blank" rel="noopener noreferrer">
+        <Image src="/images/icons/gmail.svg" alt="gmail" width={28} height={28} />
       </a>
-      <a href="https://wa.me/15066554409">
-        <Image src="images/icons/whatsapp.svg" alt="github" width={28} height={28} />
+      <a href="https://wa.me/15066554409" target="_blank" rel="noopener noreferrer">
+        <Image src="/images/icons/whatsapp.svg" alt="whatsapp" width={28} height={28} />
       </a>
     </div>
   );

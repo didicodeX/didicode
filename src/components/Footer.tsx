@@ -1,6 +1,6 @@
 "use client"; // Required for Next.js 13+ (client-side rendering)
-import { useState, useEffect } from "react";
 import { ArrowBigUpDash } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
   const [showButton, setShowButton] = useState(false);
@@ -29,7 +29,9 @@ export default function Footer() {
   return (
     <footer>
       <div className="py-16 text-center flex items-center justify-center gap-4 ">
-        <small>&copy; 2025 Dylane Tano. All rights reserved.</small>
+        <small>
+          &copy; {new Date().getFullYear()} Dylane Tano. All rights reserved.
+        </small>
         <small>
           <a
             target="_blank"

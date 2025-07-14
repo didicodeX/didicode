@@ -13,7 +13,7 @@ export const projects = [
     ],
     stack: [
       "React.svg",
-      "typescript.svg",
+      "javascript.svg",
       "tailwindcss.svg",
       "mongodb.svg",
       "nodejs.svg",
@@ -41,7 +41,7 @@ export const projects = [
     ],
     stack: [
       "React.svg",
-      "typescript.svg",
+      "javascript.svg",
       "nodejs.svg",
       "mongodb.svg",
       "tailwindcss.svg",

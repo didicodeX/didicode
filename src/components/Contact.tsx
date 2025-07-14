@@ -15,7 +15,7 @@ export default function Contact() {
             </p>
           </div>
           <div className="mt-4 flex flex-col gap-y-4 md:items-start">
-            <p>Location: Canada, Moncton</p>
+            <p>Location: Calgary, Alberta, Canada</p>
             <SocialLinks />
           </div>
         </div>

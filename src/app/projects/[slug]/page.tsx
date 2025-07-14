@@ -1,7 +1,5 @@
 // app/projects/[slug]/page.tsx
 
-"use client";
-
 import MediaSlider from "@/components/MediaSlider";
 import ProjectLinks from "@/components/ProjectLinks";
 import Status from "@/components/Status";
@@ -9,18 +7,20 @@ import { projects } from "@/lib/projects";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { use } from "react";
+import { notFound } from "next/navigation";
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>; 
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = use(params);
-  const project = projects.find((p) => p.slug === slug);
+  const { slug } = await params;
+  
+  const project = projects.find((p) => p.slug === slug);  
 
-  if (!project)
-    return <div className="text-center py-10">❌ Project not found</div>;
+  if (!project) {
+    notFound();
+  }
 
   return (
     <main className="flex flex-col gap-8">

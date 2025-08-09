@@ -15,8 +15,8 @@ export default async function ProjectDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  
-  const project = projects.find((p) => p.slug === slug);  
+
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
@@ -47,17 +47,50 @@ export default async function ProjectDetailPage({
       {/* Tech stack */}
       <div>
         <h2 className="mb-2">Tech Stack</h2>
-        <div className="flex gap-6 overflow-x-auto py-2">
-          {project.stack.map((src, index) => (
-            <Image
-              key={index}
-              src={`/images/icons/${src}`}
-              width={48}
-              height={48}
-              alt={src.replace(".svg", "")}
-              className="object-contain"
-            />
-          ))}
+        <div className="flex gap-6 overflow-x-auto py-2 ">
+          {project.stack.map((tech, index) => {
+            const hasVariants = [
+              "React",
+              "Github",
+              "Railway",
+              "Bash",
+              "Vercel",
+              "expressjs",
+              "Better Auth",
+              "Prisma",
+              "ui",
+            ].includes(tech);
+            return (
+              <div key={index} className="flex">
+                {hasVariants ? (
+                  <>
+                    <Image
+                      src={`/images/icons/${tech}_light.svg`}
+                      width={48}
+                      height={48}
+                      alt={tech}
+                      className="object-contain dark:hidden"
+                    />
+                    <Image
+                      src={`/images/icons/${tech}_dark.svg`}
+                      width={48}
+                      height={48}
+                      alt={tech}
+                      className="object-contain hidden dark:block"
+                    />
+                  </>
+                ) : (
+                  <Image
+                    src={`/images/icons/${tech}.svg`}
+                    width={48}
+                    height={48}
+                    alt={tech}
+                    className="object-contain"
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 

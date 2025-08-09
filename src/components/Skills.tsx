@@ -4,17 +4,28 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const techIcons = [
-  "/images/icons/figma.svg",
-  "/images/icons/html5.svg",
-  "/images/icons/sass.svg",
-  "/images/icons/tailwindcss.svg",
-  "/images/icons/typescript.svg",
-  "/images/icons/React.svg",
-  "/images/icons/nodejs.svg",
-  "/images/icons/mongodb.svg",
-  "/images/icons/swagger.svg",
-  "/images/icons/Railway.svg",
-  "/images/icons/git.svg",
+  "figma",
+  "html5",
+  "sass",
+  "tailwindcss",
+  "typescript",
+  "React",
+  "nodejs",
+  "mongodb",
+  "swagger",
+  "Railway",
+  "git",
+];
+
+const hasVariants = [
+  "React",
+  "Github",
+  "Railway",
+  "Bash",
+  "Vercel",
+  "expressjs",
+  "Better Auth",
+  "Prisma",
 ];
 
 export default function Skills() {
@@ -29,16 +40,37 @@ export default function Skills() {
         animate={{ x: "-50%" }}
         transition={{ ease: "linear", duration: 10, repeat: Infinity }}
       >
-        {[...techIcons, ...techIcons].map((src, index) => (
-          <Image
-            key={index}
-            src={src}
-            width={50}
-            height={50}
-            alt="tech icon"
-            className="w-30 h-12 object-contain"
-          />
-        ))}
+        {[...techIcons, ...techIcons].map((tech) => {
+          const hasVariant = hasVariants.includes(tech);
+          return (
+              hasVariant ? (
+                <>
+                  <Image
+                    src={`/images/icons/${tech}_light.svg`}
+                    width={50}
+                    height={50}
+                    alt={tech}
+                    className="w-[50px] h-[50px] object-contain dark:hidden"
+                  />
+                  <Image
+                    src={`/images/icons/${tech}_dark.svg`}
+                    width={50}
+                    height={50}
+                    alt={tech}
+                    className="w-[50px] h-[50px] object-contain hidden dark:block"
+                  />
+                </>
+              ) : (
+                <Image
+                  src={`/images/icons/${tech}.svg`}
+                  width={50}
+                  height={50}
+                  alt={tech}
+                  className="w-30 h-12 object-contain"
+                />
+              )
+          );
+        })}
       </motion.div>
     </div>
   );

@@ -1,103 +1,213 @@
-import Button from "@/components/Button";
-import { Timeline } from "@/components/Timeline";
-import { GraduationCap, Laptop, Rocket } from "lucide-react";
+import { constructMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/seo";
 import Image from "next/image";
-import Link from "next/link";
+import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import Button from "@/components/Button";
 
-// Timeline data
-const timelineItems = [
-  {
-    year: "Feb. 2023",
-    title: "Self-taught Journey",
-    description:
-      "Discovered web development through HTML, CSS, and JavaScript. Built my first personal projects.",
-    icon: <Laptop className="w-4 h-4" />,
-  },
-  {
-    year: "Sept. 2023",
-    title: "Started at CCNB",
-    description:
-      "Studied C++, C#, and algorithms. Web development was briefly introduced.",
-    icon: <GraduationCap className="w-4 h-4" />,
-  },
-  {
-    year: "June 2025",
-    title: "Graduation",
-    description:
-      "Completed my degree and transitioned into the professional world as a developer.",
-    icon: <Rocket className="w-4 h-4" />,
-  },
-];
+export const metadata = constructMetadata({
+  title: "About",
+  description:
+    "Fintech developer specializing in payment platforms and SaaS solutions.",
+});
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col gap-7">
-      <h1>About</h1>
+    <main className="mx-auto max-w-4xl px-6 py-12 space-y-12">
+      {/* Hero */}
+      <section className="text-center space-y-6">
+        <div className="mx-auto w-32 h-32 rounded-full overflow-hidden">
+          <Image
+            src="/images/DYLANE-TANO.png"
+            alt="Dylane Tano"
+            width={128}
+            height={128}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <h1 className="text-3xl font-bold text-secondary-900 dark:text-secondary-100">
+            {siteConfig.name}
+          </h1>
+          <p className="text-xl text-secondary-600 dark:text-secondary-400 mt-2">
+            Fintech Developer
+          </p>
+        </div>
+      </section>
 
-      {/* Image + description */}
-      <div className="flex flex-col md:flex-row items-start gap-6 mb-12">
-        <Image
-          src="/images/DYLANE-TANO.png"
-          alt="me"
-          width={400}
-          height={300}
-          className="rounded-lg object-cover shadow-lg"
-        />
-        <div className="space-y-4">
-          <p>
-            I graduated from{" "}
-            <strong>Collège communautaire du Nouveau-Brunswick (CCNB)</strong>,
-            where I studied from <strong>September 2023 to June 2025</strong>.
-            The program was focused on C++ and C#, with a brief introduction to
-            web development (HTML, JavaScript, and PHP).
+      {/* About */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+          About Me
+        </h2>
+        <div className="prose prose-gray max-w-none dark:prose-invert">
+          <p className="text-lg leading-relaxed text-secondary-700 dark:text-secondary-300">
+            I'm a fintech developer passionate about building reliable, scalable
+            payment platforms and SaaS solutions. My journey started with web
+            development, but I quickly gravitated toward fintech after realizing
+            the impact that well-built payment systems can have on businesses.
           </p>
-          <p>
-            I specialize in the <strong>React / Node.js</strong> stack, with a
-            strong focus on code architecture, user experience, and
-            maintainability.
+          <p className="text-lg leading-relaxed text-secondary-700 dark:text-secondary-300">
+            I specialize in Stripe integrations, multi-currency support,
+            subscription management, and building secure, compliant payment
+            flows. My goal is to make complex financial operations simple and
+            accessible for businesses of all sizes.
           </p>
-          <p>
-            I’ve worked on projects such as{" "}
+          <p className="text-lg leading-relaxed text-secondary-700 dark:text-secondary-300">
+            I've worked on projects such as{" "}
             <strong>
-              <Link
+              <a
                 target="_blank"
-                href={`https://www.badam.app`}
+                href="https://paymavo.com"
                 rel="noopener noreferrer"
-                className="inline underline hover:no-underline"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
               >
-                BADAM
-              </Link>
+                Paymavo
+              </a>
             </strong>{" "}
-            (a collaborative learning platform),{" "}
+            (a payment platform),{" "}
             <strong>
-              <Link
+              <a
                 target="_blank"
-                href={`https://hommage-whvr.vercel.app/`}
+                href="https://hommage-whvr.vercel.app/"
                 rel="noopener noreferrer"
-                className="inline underline hover:no-underline"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
               >
                 Hommage
-              </Link>
+              </a>
             </strong>{" "}
             (a respectful funeral donation site), and I'm currently designing an
             online invoicing tool.
           </p>
         </div>
-      </div>
-
-      {/* Timeline */}
-      <section className="space-y-8">
-        <h2 className="text-2xl font-bold flex gap-2 items-start">My Journey</h2>
-        <Timeline items={timelineItems} />
-
-      {/* CV */}
-      <div className="flex justify-center">
-        <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf">
-            <Button>Download My CV</Button>
-        </a>
-      </div>
       </section>
 
+      {/* Experience */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+          Experience
+        </h2>
+        <div className="space-y-8">
+          <div className="border-l-4 border-primary-600 pl-6">
+            <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-100">
+              Fintech Developer
+            </h3>
+            <p className="text-secondary-600 dark:text-secondary-400">
+              2025 - Present
+            </p>
+            <p className="mt-2 text-secondary-700 dark:text-secondary-300">
+              Building payment platforms and SaaS solutions with focus on Stripe
+              integrations, subscription management, and multi-currency support.
+            </p>
+          </div>
+          <div className="border-l-4 border-secondary-300 dark:border-secondary-600 pl-6">
+            <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-100">
+              Full Stack Developer
+            </h3>
+            <p className="text-secondary-600 dark:text-secondary-400">
+              2023 - 2024
+            </p>
+            <p className="mt-2 text-secondary-700 dark:text-secondary-300">
+              Developed web applications using React, Node.js, and modern web
+              technologies. Built learning platforms and donation systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+          Skills & Technologies
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-secondary-900 dark:text-secondary-100">
+              Fintech
+            </h3>
+            <ul className="space-y-2 text-secondary-700 dark:text-secondary-300">
+              <li>• Stripe (Checkout, Connect, Subscriptions)</li>
+              <li>• Payment processing & webhooks</li>
+              <li>• Multi-currency support</li>
+              <li>• PCI DSS compliance</li>
+              <li>• Financial reconciliation</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-secondary-900 dark:text-secondary-100">
+              Development
+            </h3>
+            <ul className="space-y-2 text-secondary-700 dark:text-secondary-300">
+              <li>• Next.js & React</li>
+              <li>• TypeScript</li>
+              <li>• PostgreSQL & MongoDB</li>
+              <li>• Prisma ORM</li>
+              <li>• Tailwind CSS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* CV Download */}
+      <section className="">
+        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+          Resume
+        </h2>
+        <p className="text-secondary-700 dark:text-secondary-300">
+          Download my CV to learn more about my experience and skills.
+        </p>
+        <div className="flex justify-center mt-4">
+          <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf">
+            <Button>Download My Resume</Button>
+          </a>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+          Get in Touch
+        </h2>
+        <p className="text-secondary-700 dark:text-secondary-300">
+          I'm always interested in new opportunities, especially in the fintech
+          space. Let's discuss how I can help build your next payment platform.
+        </p>
+        <div className="flex gap-4">
+          <a
+            href={`mailto:${siteConfig.links.email}`}
+            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+          >
+            <Mail className="h-5 w-5" />
+            Email
+          </a>
+          <a
+            href={siteConfig.links.linkedin}
+            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin className="h-5 w-5" />
+            LinkedIn
+          </a>
+          <a
+            href={siteConfig.links.github}
+            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github className="h-5 w-5" />
+            GitHub
+          </a>
+          <a
+            href={siteConfig.links.twitter}
+            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Twitter className="h-5 w-5" />
+            Twitter
+          </a>
+        </div>
+      </section>
     </main>
   );
 }

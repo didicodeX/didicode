@@ -1,93 +1,97 @@
-export const projects = [
+export type Project = {
+  slug: "paymavo" | "hommage" | "badam";
+  title: string;
+  tagline: string;
+  featured: boolean;
+  tags: string[];
+  summary: string;
+  problem: string;
+  solution: string;
+  highlights: string[];
+  tech: string[];
+  links: { demo?: string; repo?: string };
+  images: { cover: string; gallery: string[] };
+  seo: { title: string; description: string; ogImage?: string };
+};
+
+export const projects: Project[] = [
   {
-    slug: "badam",
-    title: "BADAM",
-    description:
-      "Collaborative learning platform designed to facilitate skill sharing between trainers and learners.",
-    medias: [
-      "https://res.cloudinary.com/duvjrq5ca/video/upload/v1750517187/2025-05-14_13-29-34_vnn5ui.mp4",
-      "/images/projects/badam/CreateFormation.png",
-      "/images/projects/badam/CreateSession.png",
-      "/images/projects/badam/FormationDetails.png",
-      "/images/projects/badam/SessionDetail.png",
+    slug: "paymavo",
+    title: "Paymavo — SaaS Invoicing Platform",
+    tagline: "Stripe-powered billing, PDFs, and multi-currency.",
+    featured: true,
+    tags: ["fintech", "saas", "payments"],
+    summary:
+      "Modern invoicing SaaS with Stripe Checkout/Connect, subscriptions, multi-currency conversion, and PDF generation.",
+    problem:
+      "Small businesses struggle with reliable invoicing, reconciliation, and frictionless payments.",
+    solution:
+      "A clean SaaS that automates invoices, online payments, currency conversion, and status updates via webhooks.",
+    highlights: [
+      "Stripe Checkout + Subscriptions + Connect",
+      "Multi-currency with amountReceived tracking",
+      "PDF invoices + email flows (Resend/MJML)",
+      "Free/Pro tiers with upgrade path",
     ],
-    stack: [
-      "React",
-      "javascript",
+    tech: [
+      "nextjs",
+      "typescript",
+      "stripe",
+      "postgresql",
+      "Prisma",
       "tailwindcss",
-      "mongodb",
-      "nodejs",
-      "Railway",
+      "Better Auth",
+      "neon",
       "Vercel",
+      "cloudinary",
+      "resend",
+      "mjml",
     ],
-    status: "done",
-    links: {
-      live: "https://www.badam.app",
-      frontend: "https://github.com/didicodeX/BADAM.git",
-      backend: "https://github.com/didicodeX/BADAM_API.git",
-      figma:
-        "https://www.figma.com/design/ifQLDd44qbl82TqHvec2yz/%F0%9F%96%A5%EF%B8%8F-UI-Web?node-id=60-212&t=sSG9IC8AdUei5YX9-1",
+    links: { demo: "https://paymavo.com", repo: "" },
+    images: {
+      cover: "/images/projects/paymavo/cover.png",
+      gallery: [
+        "/images/projects/paymavo/1.png",
+        "/images/projects/paymavo/2.png",
+        "/images/projects/paymavo/3.png",
+      ],
+    },
+    seo: {
+      title: "Paymavo — Fintech Invoicing SaaS",
+      description:
+        "Stripe-powered invoicing SaaS with subscriptions, Connect, and multi-currency.",
     },
   },
   {
     slug: "hommage",
-    title: "Hommage",
-    description:
-      "Respectful funeral donation website to honor a loved one. Allows you to create a simple, elegant page to receive donations via Stripe.",
-    medias: [
-      "/images/projects/hommage/Home.png",
-      "/images/projects/hommage/HomeMobile.png",
-      "/images/projects/hommage/AllDonations.png",
+    title: "Hommage — Donation Platform",
+    tagline: "Respectful donation flow with real-time updates.",
+    featured: true,
+    tags: ["fintech", "donation", "stripe"],
+    summary:
+      "Donation platform with Stripe payments, donor list, and real-time status via webhooks.",
+    problem: "Need a simple, trustworthy way to collect donations online.",
+    solution:
+      "Clean UI, reliable Stripe integration, and a gentle donor experience.",
+    highlights: [
+      "Stripe payments + webhook reconciliation",
+      "Donor list with live updates",
+      "Minimal, respectful UX",
     ],
-    stack: [
-      "React",
-      "javascript",
-      "nodejs",
-      "mongodb",
-      "tailwindcss",
-      "stripe",
-      "Railway",
-      "Vercel",
-    ],
-    status: "done",
-    links: {
-      live: "https://hommage-whvr.vercel.app/",
-      frontend: "https://github.com/didicodeX/Hommage.git",
-      backend: "https://github.com/didicodeX/Hommage_API.git",
-      figma:
-        "https://www.figma.com/design/x9WI8mvh7Gn3xgewRoP7jH/%F0%9F%95%8A%EF%B8%8F-UI-Web?m=auto",
+    tech: ["React", "Node.js", "Stripe", "MongoDB", "Tailwind"],
+    links: { demo: "https://hommage-whvr.vercel.app/", repo: "" },
+    images: {
+      cover: "/images/projects/hommage/cover.png",
+      gallery: [
+        "/images/projects/hommage/1.png",
+        "/images/projects/hommage/2.png",
+        "/images/projects/hommage/3.png",
+      ],
     },
-  },
-  {
-    slug: "facturier",
-    title: "Facturier",
-    description:
-      "Modern invoicing app for freelancers. Currently in design phase (Figma only).",
-    medias: [
-      "/images/projects/facturier/Home.png",
-      "/images/projects/facturier/Invoices.png",
-      "/images/projects/facturier/Customers.png",
-      "/images/projects/facturier/NewInvoice.png",
-    ],
-    stack: [
-      "nextjs",
-      "typescript",
-      "tailwindcss",
-      "postgresql",
-      "Prisma",
-      "Better Auth",
-      "ui",
-      "stripe",
-      "Vercel",
-      "neon",
-    ],
-    status: "wip",
-    links: {
-      live: "",
-      frontend: "",
-      backend: "",
-      figma:
-        "https://www.figma.com/design/SySNQRTt4ZxOhtQw2glTOU/UI-Web---Facturier?node-id=132-1418&t=1i3lVxNQZVSHgxFu-1",
+    seo: {
+      title: "Hommage — Donation Platform",
+      description:
+        "Donation platform with a respectful flow and Stripe-based reliability.",
     },
   },
 ];

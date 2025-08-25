@@ -25,10 +25,10 @@ export default function AboutPage() {
           />
         </div>
         <div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary-900 dark:text-secondary-100">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-900 dark:text-primary-100">
             {siteConfig.name}
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-secondary-600 dark:text-secondary-100 mt-2">
+          <p className="text-lg sm:text-xl lg:text-2xl text-primary-600 dark:text-primary-100 mt-2">
             Fintech Developer
           </p>
         </div>
@@ -36,23 +36,23 @@ export default function AboutPage() {
 
       {/* About */}
       <section className="space-y-4 sm:space-y-6">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-secondary-900 dark:text-secondary-100">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
           About Me
         </h2>
         <div className="prose prose-gray max-w-none dark:prose-invert">
-          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-secondary-700 dark:text-secondary-100">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-primary-700 dark:text-primary-100">
             I'm a fintech developer passionate about building reliable, scalable
             payment platforms and SaaS solutions. My journey started with web
             development, but I quickly gravitated toward fintech after realizing
             the impact that well-built payment systems can have on businesses.
           </p>
-          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-secondary-700 dark:text-secondary-100">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-primary-700 dark:text-primary-100">
             I specialize in Stripe integrations, multi-currency support,
             subscription management, and building secure, compliant payment
             flows. My goal is to make complex financial operations simple and
             accessible for businesses of all sizes.
           </p>
-          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-secondary-700 dark:text-secondary-100">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-primary-700 dark:text-primary-100">
             I've worked on projects such as{" "}
             <strong>
               <a
@@ -83,32 +83,43 @@ export default function AboutPage() {
 
       {/* Experience */}
       <section className="space-y-4 sm:space-y-6">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-secondary-900 dark:text-secondary-100">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
           Experience
         </h2>
         <div className="space-y-6 sm:space-y-8">
           <div className="border-l-4 border-primary-600 pl-6">
-            <h3 className="text-base sm:text-lg font-semibold text-secondary-900 dark:text-secondary-100">
+            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100">
               Fintech Developer
             </h3>
-            <p className="text-secondary-600 dark:text-secondary-100">
+            <p className="text-primary-600 dark:text-primary-100">
               2025 - Present
             </p>
-            <p className="mt-2 text-secondary-700 dark:text-secondary-100">
+            <p className="mt-2 text-primary-700 dark:text-primary-100">
               Building payment platforms and SaaS solutions with focus on Stripe
               integrations, subscription management, and multi-currency support.
             </p>
           </div>
-          <div className="border-l-4 border-secondary-300 dark:border-secondary-600 pl-6">
-            <h3 className="text-base sm:text-lg font-semibold text-secondary-900 dark:text-secondary-100">
+          <div className="border-l-4 border-primary-300 dark:border-primary-600 pl-6">
+            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100">
               Full Stack Developer
             </h3>
-            <p className="text-secondary-600 dark:text-secondary-100">
-              2023 - 2024
+            <p className="text-primary-600 dark:text-primary-100">
+              2024 - 2025
             </p>
-            <p className="mt-2 text-secondary-700 dark:text-secondary-100">
+            <p className="mt-2 text-primary-700 dark:text-primary-100">
               Developed web applications using React, Node.js, and modern web
               technologies. Built learning platforms and donation systems.
+            </p>
+          </div>
+          <div className="border-l-4 border-primary-300 dark:border-primary-600 pl-6">
+            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100">
+              Frontend Developer
+            </h3>
+            <p className="text-primary-600 dark:text-primary-100">
+              2023 - 2024
+            </p>
+            <p className="mt-2 text-primary-700 dark:text-primary-100">
+              Developed web applications using JavaScript, HTML, and CSS.
             </p>
           </div>
         </div>
@@ -116,15 +127,15 @@ export default function AboutPage() {
 
       {/* Skills */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+        <h2 className="text-2xl font-semibold text-primary-900 dark:text-primary-100">
           Skills & Technologies
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-secondary-900 dark:text-secondary-100">
+            <h3 className="text-lg font-semibold mb-3 text-primary-900 dark:text-primary-100">
               Fintech
             </h3>
-            <ul className="space-y-2 text-secondary-700 dark:text-secondary-100">
+            <ul className="space-y-2 text-primary-700 dark:text-primary-100">
               <li>• Stripe (Checkout, Connect, Subscriptions)</li>
               <li>• Payment processing & webhooks</li>
               <li>• Multi-currency support</li>
@@ -133,10 +144,10 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-secondary-900 dark:text-secondary-100">
+            <h3 className="text-lg font-semibold mb-3 text-primary-900 dark:text-primary-100">
               Development
             </h3>
-            <ul className="space-y-2 text-secondary-700 dark:text-secondary-100">
+            <ul className="space-y-2 text-primary-700 dark:text-primary-100">
               <li>• Next.js & React</li>
               <li>• TypeScript</li>
               <li>• PostgreSQL & MongoDB</li>
@@ -149,10 +160,10 @@ export default function AboutPage() {
 
       {/* CV Download */}
       <section className="">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+        <h2 className="text-2xl font-semibold text-primary-900 dark:text-primary-100">
           Resume
         </h2>
-        <p className="text-secondary-700 dark:text-secondary-100">
+        <p className="text-primary-700 dark:text-primary-100">
           Download my CV to learn more about my experience and skills.
         </p>
         <div className="flex justify-center mt-4">
@@ -164,24 +175,24 @@ export default function AboutPage() {
 
       {/* Contact */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+        <h2 className="text-2xl font-semibold text-primary-900 dark:text-primary-100">
           Get in Touch
         </h2>
-        <p className="text-secondary-700 dark:text-secondary-100">
+        <p className="text-primary-700 dark:text-primary-100">
           I'm always interested in new opportunities, especially in the fintech
           space. Let's discuss how I can help build your next payment platform.
         </p>
         <div className="flex gap-4 flex-wrap">
           <a
             href={`mailto:${siteConfig.links.email}`}
-            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-100 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
           >
             <Mail className="h-5 w-5" />
             Email
           </a>
           <a
             href={siteConfig.links.linkedin}
-            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-100 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -190,7 +201,7 @@ export default function AboutPage() {
           </a>
           <a
             href={siteConfig.links.github}
-            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-100 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -199,7 +210,7 @@ export default function AboutPage() {
           </a>
           <a
             href={siteConfig.links.twitter}
-            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-100 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >

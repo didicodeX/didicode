@@ -47,7 +47,7 @@ export default async function ProjectDetailPage({
       <section className="space-y-4 sm:space-y-6">
         <Link
           href="/projects"
-          className="inline-flex items-center gap-2 text-secondary-600 dark:text-secondary-100 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors"
+          className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to projects
@@ -55,10 +55,10 @@ export default async function ProjectDetailPage({
 
         <div className="space-y-4">
           <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-900 dark:text-secondary-100">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 dark:text-primary-100">
               {project.title}
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-secondary-600 dark:text-secondary-100">
+            <p className="text-lg sm:text-xl lg:text-2xl text-primary-600 dark:text-primary-100">
               {project.tagline}
             </p>
           </div>
@@ -77,8 +77,8 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Media Gallery */}
-      <section className="pt-12">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+      <section className="pt-16 sm:pt-20 lg:pt-24">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100 mb-6 sm:mb-8">
           Gallery
         </h2>
         {project.images.gallery.length > 0 && (
@@ -87,34 +87,34 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Project Overview */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
           Overview
         </h2>
-        <div className="space-y-6">
+        <div className="space-y-8 sm:space-y-10">
           <div>
-            <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-2">
+            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100 mb-3 sm:mb-4">
               Summary
             </h3>
-            <p className="text-secondary-700 dark:text-secondary-100 leading-relaxed">
+            <p className="text-base sm:text-lg leading-relaxed text-primary-700 dark:text-primary-100">
               {project.summary}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-2">
+            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100 mb-3 sm:mb-4">
               Problem
             </h3>
-            <p className="text-secondary-700 dark:text-secondary-100 leading-relaxed">
+            <p className="text-base sm:text-lg leading-relaxed text-primary-700 dark:text-primary-100">
               {project.problem}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-100 mb-2">
+            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100 mb-3 sm:mb-4">
               Solution
             </h3>
-            <p className="text-secondary-700 dark:text-secondary-100 leading-relaxed">
+            <p className="text-base sm:text-lg leading-relaxed text-primary-700 dark:text-primary-100">
               {project.solution}
             </p>
           </div>
@@ -122,15 +122,15 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Highlights */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
           Key Features
         </h2>
-        <ul className="space-y-3">
+        <ul className="space-y-4 sm:space-y-5">
           {project.highlights.map((highlight, index) => (
             <li
               key={index}
-              className="flex items-start gap-3 text-secondary-700 dark:text-secondary-100"
+              className="flex items-start gap-3 text-base sm:text-lg text-primary-700 dark:text-primary-100"
             >
               <span className="w-2 h-2 bg-primary-600 rounded-full mt-2 flex-shrink-0" />
               {highlight}
@@ -140,11 +140,11 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Tech Stack */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
           Tech Stack
         </h2>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 sm:gap-6">
           {project.tech.map((tech, index) => {
             const hasVariants = [
               "React",
@@ -161,7 +161,7 @@ export default async function ProjectDetailPage({
             return (
               <div
                 key={index}
-                className="flex items-center gap-2 p-3 bg-secondary-50 dark:bg-secondary-800 rounded-lg"
+                className="flex items-center gap-2 p-3 sm:p-4 bg-primary-50 dark:bg-primary-800 rounded-lg"
               >
                 {hasVariants ? (
                   <>
@@ -189,7 +189,7 @@ export default async function ProjectDetailPage({
                     className="object-contain"
                   />
                 )}
-                <span className="text-sm font-medium text-secondary-700 dark:text-secondary-100">
+                <span className="text-sm sm:text-base font-medium text-primary-700 dark:text-primary-100">
                   {tech}
                 </span>
               </div>
@@ -199,17 +199,17 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Links */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100">
+      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
           Links
         </h2>
-        <div className="flex gap-4">
+        <div className="flex gap-4 sm:gap-6">
           {project.links.demo && (
             <a
               href={project.links.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
               Live Demo
@@ -220,7 +220,7 @@ export default async function ProjectDetailPage({
               href={project.links.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border border-secondary-300 dark:border-secondary-600 text-secondary-700 dark:text-secondary-100 rounded-lg hover:bg-secondary-50 dark:hover:bg-secondary-800 transition-colors"
+              className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 border border-primary-300 dark:border-primary-600 text-primary-700 dark:text-primary-100 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-800 transition-colors"
             >
               <Github className="w-4 h-4" />
               View Code

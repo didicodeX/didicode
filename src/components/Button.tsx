@@ -26,9 +26,9 @@ export default function Button({
     primary:
       "bg-primary-700 text-white hover:bg-primary-600 focus-visible:ring-primary-700",
     secondary:
-      "bg-secondary-100 dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 hover:bg-secondary-200 dark:hover:bg-secondary-700 focus-visible:ring-secondary-600",
+      "bg-primary-100 dark:bg-primary-800 text-primary-900 dark:text-primary-100 hover:bg-primary-200 dark:hover:bg-primary-700 focus-visible:ring-primary-600",
     outline:
-      "border border-secondary-300 bg-white text-secondary-700 hover:bg-secondary-50 focus-visible:ring-secondary-600 dark:bg-secondary-500 dark:text-secondary-100 dark:border-secondary-700 dark:hover:bg-secondary-800",
+      "border border-primary-300 bg-white text-primary-700 hover:bg-primary-50 focus-visible:ring-primary-600 dark:bg-primary-500 dark:text-primary-100 dark:border-primary-700 dark:hover:bg-primary-800",
   };
 
   const sizes = {

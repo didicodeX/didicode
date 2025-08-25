@@ -38,13 +38,13 @@ export default function MediaSlider({ slides }: MediaSliderProps) {
     <div className="relative w-full">
       <button
         onClick={scrollLeft}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-secondary-800/80 hover:bg-white dark:hover:bg-secondary-800 text-secondary-900 dark:text-secondary-100 rounded-full p-1 shadow"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-primary-800/80 hover:bg-white dark:hover:bg-primary-800 text-primary-900 dark:text-primary-100 rounded-full p-1 shadow"
       >
         <ChevronLeft size={24} />
       </button>
       <button
         onClick={scrollRight}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-secondary-800/80 hover:bg-white dark:hover:bg-secondary-800 text-secondary-900 dark:text-secondary-100 rounded-full p-1 shadow"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-primary-800/80 hover:bg-white dark:hover:bg-primary-800 text-primary-900 dark:text-primary-100 rounded-full p-1 shadow"
       >
         <ChevronRight size={24} />
       </button>

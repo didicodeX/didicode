@@ -13,7 +13,7 @@ export default function FeaturedProjects() {
           <h2 className="text-sm sm:text-base font-semibold leading-7 text-primary-600 dark:text-primary-400">
             Featured Work
           </h2>
-          <p className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-secondary-900 dark:text-secondary-100">
+          <p className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary-900 dark:text-primary-100">
             Recent fintech projects
           </p>
         </div>
@@ -26,29 +26,29 @@ export default function FeaturedProjects() {
                   alt={project.title}
                   width={800}
                   height={400}
-                  className="aspect-[16/9] w-full rounded-2xl bg-secondary-100 dark:bg-secondary-800 object-cover sm:aspect-[2/1] "
+                  className="aspect-[16/9] w-full rounded-2xl bg-primary-100 dark:bg-primary-800 object-cover sm:aspect-[2/1] "
                 />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-secondary-900/10 dark:ring-secondary-100/10" />
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary-900/10 dark:ring-primary-100/10" />
               </div>
               <div className="max-w-xl">
                 <div className="mt-6 sm:mt-8 flex items-center gap-x-2 sm:gap-x-4 text-xs">
                   {project.tech.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="relative z-10 rounded-full bg-secondary-50 dark:bg-secondary-800 px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium text-secondary-600 dark:text-secondary-100 hover:bg-secondary-100 dark:hover:bg-secondary-700"
+                      className="relative z-10 rounded-full bg-primary-50 dark:bg-primary-800 px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-700"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 <div className="group relative">
-                  <h3 className="mt-3 text-base sm:text-lg font-semibold leading-6 text-secondary-900 dark:text-secondary-100 group-hover:text-secondary-600 dark:group-hover:text-secondary-100">
+                  <h3 className="mt-3 text-base sm:text-lg font-semibold leading-6 text-primary-900 dark:text-primary-100 group-hover:text-primary-600 dark:group-hover:text-primary-100">
                     <Link href={`/projects/${project.slug}`}>
                       <span className="absolute inset-0" />
                       {project.title}
                     </Link>
                   </h3>
-                  <p className="mt-4 sm:mt-5 line-clamp-3 text-sm leading-6 text-secondary-600 dark:text-secondary-100">
+                  <p className="mt-4 sm:mt-5 line-clamp-3 text-sm leading-6 text-primary-600 dark:text-primary-100">
                     {project.summary}
                   </p>
                 </div>

@@ -44,7 +44,7 @@ export default function ProjectCard({
                 />
               )
             ) : (
-              <div className="absolute inset-0 bg-secondary-100 dark:bg-secondary-800 flex items-center justify-center text-secondary-600 dark:text-secondary-100 text-sm">
+              <div className="absolute inset-0 bg-primary-100 dark:bg-primary-800 flex items-center justify-center text-primary-600 dark:text-primary-100 text-sm">
                 No media
               </div>
             )}

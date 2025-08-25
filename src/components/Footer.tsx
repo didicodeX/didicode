@@ -45,7 +45,7 @@ export default function Footer() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 z-10 p-2 text-secondary-900 dark:text-secondary-100 rounded bg-secondary-100 dark:bg-primary-800"
+          className="fixed bottom-5 right-5 z-10 p-2 text-primary-900 dark:text-primary-100 rounded bg-primary-100 dark:bg-primary-800"
         >
           <ArrowBigUpDash />
         </button>

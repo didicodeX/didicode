@@ -46,7 +46,7 @@ export default function Gallery({ images, title }: GalleryProps) {
           <div
             key={index}
             onClick={() => setSelectedIndex(index)}
-            className="relative aspect-video rounded-lg overflow-hidden bg-secondary-100 dark:bg-secondary-800 cursor-pointer group hover:shadow-lg transition-all duration-300"
+            className="relative aspect-video rounded-lg overflow-hidden bg-primary-100 dark:bg-primary-800 cursor-pointer group hover:shadow-lg transition-all duration-300"
           >
             <Image
               src={image}
@@ -58,7 +58,7 @@ export default function Gallery({ images, title }: GalleryProps) {
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="bg-white/90 dark:bg-black/90 rounded-full p-2">
                 <svg
-                  className="w-6 h-6 text-secondary-900 dark:text-secondary-100"
+                  className="w-6 h-6 text-primary-900 dark:text-primary-100"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -87,7 +87,7 @@ export default function Gallery({ images, title }: GalleryProps) {
           {/* Close button */}
           <button
             onClick={() => setSelectedIndex(null)}
-            className="absolute top-4 right-4 z-10 text-white hover:text-secondary-300 transition-colors"
+            className="absolute top-4 right-4 z-10 text-white hover:text-primary-300 transition-colors"
           >
             <X className="w-8 h-8" />
           </button>
@@ -100,7 +100,7 @@ export default function Gallery({ images, title }: GalleryProps) {
                   e.stopPropagation();
                   handlePrev();
                 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-secondary-300 transition-colors"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-primary-300 transition-colors"
               >
                 <ChevronLeft className="w-8 h-8" />
               </button>
@@ -109,7 +109,7 @@ export default function Gallery({ images, title }: GalleryProps) {
                   e.stopPropagation();
                   handleNext();
                 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-secondary-300 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-primary-300 transition-colors"
               >
                 <ChevronRight className="w-8 h-8" />
               </button>

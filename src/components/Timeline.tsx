@@ -26,7 +26,7 @@ export function Timeline({ items }: TimelineProps) {
             <h3>
               {item.year} — {item.title}
             </h3>
-            <p className="text-secondary-600 dark:text-secondary-100">
+            <p className="text-primary-600 dark:text-primary-100">
               {item.description}
             </p>
           </div>

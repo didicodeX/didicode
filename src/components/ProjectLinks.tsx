@@ -48,7 +48,7 @@ export default function ProjectLinks({ links }: ProjectLinksProps) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-secondary-600 dark:text-secondary-100 hover:text-secondary-800 dark:hover:text-secondary-200 hover:underline"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-800 dark:hover:text-primary-200 hover:underline"
           >
             <Icon className="w-5 h-5" />
             <span>{label}</span>

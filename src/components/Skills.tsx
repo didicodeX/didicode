@@ -30,7 +30,7 @@ const hasVariants = [
 
 export default function Skills() {
   return (
-    <div className="overflow-hidden bg-secondary-100 dark:bg-secondary-900 py-10 relative">
+    <div className="overflow-hidden bg-primary-100 dark:bg-primary-900 py-10 relative">
       <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-secondary-100 dark:from-primary-900 to-transparent z-10"></div>
       <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-secondary-100 dark:from-primary-900 to-transparent z-10"></div>
 

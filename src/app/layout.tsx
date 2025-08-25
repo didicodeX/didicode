@@ -24,7 +24,7 @@ export default function RootLayout({
           <Navbar />
 
           {/* Contenu principal qui prend tout l’espace restant */}
-          <main className="flex-1  max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 w-full mt-20">
+          <main className="flex-1  max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full">
             {children}
           </main>
           {/* Footer qui reste en bas */}

@@ -93,7 +93,7 @@ export default function AboutPage() {
       {/* CV */}
       <div className="flex justify-center">
         <a href="/doc/CV_Tano_Dylane.pdf" download="CV_Tano_Dylane.pdf">
-          <Button text="Download My CV" />
+            <Button>Download My CV</Button>
         </a>
       </div>
       </section>

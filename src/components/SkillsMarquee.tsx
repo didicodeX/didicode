@@ -37,8 +37,14 @@ export default function SkillsMarquee() {
   return (
     <div className="overflow-hidden bg-gray-100 dark:bg-gray-900 py-10 relative">
       <Marquee className="w-full">
-        <MarqueeFade side="left" className="bg-gradient-to-r from-primary-50 to-transparent dark:from-primary-900" />
-        <MarqueeFade side="right" className="bg-gradient-to-l from-primary-50 to-transparent dark:from-primary-900" />
+        <MarqueeFade
+          side="left"
+          className="bg-gradient-to-r from-primary-50 to-transparent dark:from-primary-900"
+        />
+        <MarqueeFade
+          side="right"
+          className="bg-gradient-to-l from-primary-50 to-transparent dark:from-primary-900"
+        />
         <MarqueeContent speed={40} pauseOnHover={true} loop={0} autoFill={true}>
           {techIcons.map((tech) => {
             const hasVariant = hasVariants.includes(tech);

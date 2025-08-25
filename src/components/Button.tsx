@@ -20,13 +20,13 @@ export default function Button({
   type = "button",
 }: ButtonProps) {
   const baseClasses =
-      "inline-flex items-center justify-center rounded-md font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 w-full";
+    "inline-flex items-center justify-center rounded-md font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 w-full";
 
   const variants = {
     primary:
       "bg-primary-700 text-white hover:bg-primary-600 focus-visible:ring-primary-700",
     secondary:
-      "bg-secondary-100 text-secondary-900 hover:bg-secondary-200 focus-visible:ring-secondary-600",
+      "bg-secondary-100 dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 hover:bg-secondary-200 dark:hover:bg-secondary-700 focus-visible:ring-secondary-600",
     outline:
       "border border-secondary-300 bg-white text-secondary-700 hover:bg-secondary-50 focus-visible:ring-secondary-600 dark:bg-secondary-500 dark:text-secondary-100 dark:border-secondary-700 dark:hover:bg-secondary-800",
   };

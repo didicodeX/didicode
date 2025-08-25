@@ -30,9 +30,9 @@ const hasVariants = [
 
 export default function Skills() {
   return (
-    <div className="overflow-hidden bg-gray-100 py-10 relative">
-      <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-slate-100 dark:bg-gradient-to-r dark:from-primary-900 to-transparent z-10"></div>
-      <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-slate-100 dark:bg-gradient-to-l dark:from-primary-900 to-transparent z-10"></div>
+    <div className="overflow-hidden bg-secondary-100 dark:bg-secondary-900 py-10 relative">
+      <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-secondary-100 dark:from-primary-900 to-transparent z-10"></div>
+      <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-secondary-100 dark:from-primary-900 to-transparent z-10"></div>
 
       <motion.div
         className="flex gap-8  inset-shadow-sm inset-shadow-indigo-500 "
@@ -42,33 +42,31 @@ export default function Skills() {
       >
         {[...techIcons, ...techIcons].map((tech) => {
           const hasVariant = hasVariants.includes(tech);
-          return (
-              hasVariant ? (
-                <>
-                  <Image
-                    src={`/images/icons/${tech}_light.svg`}
-                    width={50}
-                    height={50}
-                    alt={tech}
-                    className="w-[50px] h-[50px] object-contain dark:hidden"
-                  />
-                  <Image
-                    src={`/images/icons/${tech}_dark.svg`}
-                    width={50}
-                    height={50}
-                    alt={tech}
-                    className="w-[50px] h-[50px] object-contain hidden dark:block"
-                  />
-                </>
-              ) : (
-                <Image
-                  src={`/images/icons/${tech}.svg`}
-                  width={50}
-                  height={50}
-                  alt={tech}
-                  className="w-30 h-12 object-contain"
-                />
-              )
+          return hasVariant ? (
+            <>
+              <Image
+                src={`/images/icons/${tech}_light.svg`}
+                width={50}
+                height={50}
+                alt={tech}
+                className="w-[50px] h-[50px] object-contain dark:hidden"
+              />
+              <Image
+                src={`/images/icons/${tech}_dark.svg`}
+                width={50}
+                height={50}
+                alt={tech}
+                className="w-[50px] h-[50px] object-contain hidden dark:block"
+              />
+            </>
+          ) : (
+            <Image
+              src={`/images/icons/${tech}.svg`}
+              width={50}
+              height={50}
+              alt={tech}
+              className="w-30 h-12 object-contain"
+            />
           );
         })}
       </motion.div>

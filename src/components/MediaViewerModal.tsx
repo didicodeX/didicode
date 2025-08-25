@@ -5,8 +5,8 @@ import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface MediaViewerModalProps {
-  media: string[];            // toutes les slides
-  currentIndex: number;       // index du média actif
+  media: string[]; // toutes les slides
+  currentIndex: number; // index du média actif
   onClose: () => void;
   onNext: () => void;
   onPrev: () => void;
@@ -45,7 +45,7 @@ export default function MediaViewerModal({
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-white text-black rounded-full p-2 hover:bg-gray-200"
+          className="absolute top-4 right-4 z-10 bg-white dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 rounded-full p-2 hover:bg-secondary-100 dark:hover:bg-secondary-700"
         >
           <X className="w-6 h-6" />
         </button>
@@ -53,7 +53,7 @@ export default function MediaViewerModal({
         {/* Previous */}
         <button
           onClick={onPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white text-black rounded-full p-2 hover:bg-gray-200"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 rounded-full p-2 hover:bg-secondary-100 dark:hover:bg-secondary-700"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
@@ -61,7 +61,7 @@ export default function MediaViewerModal({
         {/* Next */}
         <button
           onClick={onNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white text-black rounded-full p-2 hover:bg-gray-200"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 rounded-full p-2 hover:bg-secondary-100 dark:hover:bg-secondary-700"
         >
           <ChevronRight className="w-6 h-6" />
         </button>

@@ -35,7 +35,7 @@ export default function Footer() {
         <small>
           <a
             target="_blank"
-            className="text-blue-600 hover:underline"
+            className="text-primary-600 dark:text-primary-400 hover:underline"
             href="https://didi-code.vercel.app/"
           >
             V1
@@ -45,7 +45,7 @@ export default function Footer() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 z-10 p-2 text-slate-800 rounded dark:text-white bg-secondary-100 dark:bg-primary-800"
+          className="fixed bottom-5 right-5 z-10 p-2 text-secondary-900 dark:text-secondary-100 rounded bg-secondary-100 dark:bg-primary-800"
         >
           <ArrowBigUpDash />
         </button>

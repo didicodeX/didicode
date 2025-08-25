@@ -17,15 +17,21 @@ const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-3 text-xs md:text-sm">
-            <Link href="/" className="hover:text-primary-600 transition">
+            <Link
+              href="/"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition"
+            >
               Home
             </Link>
-            <Link href="/about" className="hover:text-primary-600 transition">
+            <Link
+              href="/about"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition"
+            >
               About
             </Link>
             <Link
               href="/projects"
-              className="hover:text-primary-600 transition"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition"
             >
               Projects
             </Link>

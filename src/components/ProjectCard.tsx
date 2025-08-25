@@ -7,17 +7,16 @@ interface ProjectCardProps {
   slug: string;
   title: string;
   description: string;
-  medias: string[];
+  cover: string;
 }
 
 export default function ProjectCard({
   slug,
   title,
   description,
-  medias = [],
+  cover,
 }: ProjectCardProps) {
-  const media = medias[0];
-  const isVideo = media?.endsWith(".mp4");
+  const isVideo = cover?.endsWith(".mp4");
 
   return (
     <Link href={`/projects/${slug}`} className="block group">
@@ -26,10 +25,10 @@ export default function ProjectCard({
           {/* Card container */}
           <div className="relative h-full rounded-xl overflow-hidden border border-white/10 bg-black/5 shadow-sm transition-all duration-300">
             {/* Media */}
-            {media ? (
+            {cover ? (
               isVideo ? (
                 <video
-                  src={media}
+                  src={cover}
                   autoPlay
                   loop
                   muted
@@ -38,14 +37,14 @@ export default function ProjectCard({
                 />
               ) : (
                 <Image
-                  src={media}
+                  src={cover}
                   alt={title}
                   fill
                   className="absolute inset-0 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               )
             ) : (
-              <div className="absolute inset-0 bg-gray-300 flex items-center justify-center text-gray-600 text-sm">
+              <div className="absolute inset-0 bg-secondary-100 dark:bg-secondary-800 flex items-center justify-center text-secondary-600 dark:text-secondary-100 text-sm">
                 No media
               </div>
             )}

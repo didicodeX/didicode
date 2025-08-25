@@ -6,20 +6,22 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative isolate px-6  lg:px-8 mt-20">
+    <section className="relative isolate px-6  lg:px-8 mt-16">
       <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:py-16">
         <div className="text-center">
           <motion.h1
-            className="text-4xl font-bold tracking-tight text-primary-900 dark:text-primary-50 sm:text-6xl"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-primary-900 dark:text-primary-50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             I build{" "}
-            <span className="text-primary-600">SaaS & payment platforms</span>
+            <span className="text-primary-600 dark:text-primary-400">
+              SaaS & payment platforms
+            </span>
           </motion.h1>
           <motion.p
-            className="mt-6 text-lg leading-8 text-primary-700 dark:text-primary-100"
+            className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-8 text-primary-700 dark:text-primary-100"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -29,7 +31,7 @@ export default function Hero() {
             money.
           </motion.p>
           <motion.div
-            className="mt-10 flex items-center justify-center gap-2 flex-col md:flex-row"
+            className="mt-6 sm:mt-8 lg:mt-10 flex items-center justify-center gap-2 flex-col md:flex-row"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}

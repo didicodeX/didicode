@@ -44,16 +44,19 @@ export const projects: Project[] = [
       "neon",
       "Vercel",
       "cloudinary",
-      "resend",
+      "Resend",
       "mjml",
     ],
     links: { demo: "https://paymavo.com", repo: "" },
     images: {
       cover: "/images/projects/paymavo/cover.png",
       gallery: [
+        "/images/projects/paymavo/cover.png",
         "/images/projects/paymavo/1.png",
         "/images/projects/paymavo/2.png",
         "/images/projects/paymavo/3.png",
+        "/images/projects/paymavo/4.png",
+        "/images/projects/paymavo/5.png",
       ],
     },
     seo: {
@@ -78,7 +81,7 @@ export const projects: Project[] = [
       "Donor list with live updates",
       "Minimal, respectful UX",
     ],
-    tech: ["React", "Node.js", "Stripe", "MongoDB", "Tailwind"],
+    tech: ["React", "nodejs", "Stripe", "MongoDB", "Tailwindcss"],
     links: { demo: "https://hommage-whvr.vercel.app/", repo: "" },
     images: {
       cover: "/images/projects/hommage/cover.png",
@@ -86,6 +89,7 @@ export const projects: Project[] = [
         "/images/projects/hommage/1.png",
         "/images/projects/hommage/2.png",
         "/images/projects/hommage/3.png",
+        "/images/projects/hommage/4.png",
       ],
     },
     seo: {

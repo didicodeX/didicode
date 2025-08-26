@@ -2,7 +2,7 @@ import { CreditCard, Zap, Shield } from "lucide-react";
 
 export default function Expertise() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 xl:py-32">
+    <section className="py-16 sm:py-20 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-sm sm:text-base font-semibold leading-7 text-primary-600 dark:text-primary-400">

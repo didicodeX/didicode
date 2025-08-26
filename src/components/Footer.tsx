@@ -32,15 +32,6 @@ export default function Footer() {
         <small>
           &copy; {new Date().getFullYear()} Dylane Tano. All rights reserved.
         </small>
-        <small>
-          <a
-            target="_blank"
-            className="text-primary-600 dark:text-primary-400 hover:underline"
-            href="https://didi-code.vercel.app/"
-          >
-            V1
-          </a>
-        </small>
       </div>
       {showButton && (
         <button

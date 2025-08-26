@@ -4,10 +4,10 @@ import Navbar from "../components/NavBar";
 import "./globals.css";
 
 export const metadata = {
-  title: "Didicode - Développeur Web",
+  title: "Didicode - Fintech Developer",
   description:
-    "Développeur JavaScript spécialisé en React et Node.js. Découvrez mon portfolio et contactez-moi.",
-  keywords: "Didicode, développeur, Node.js, React, JavaScript, web",
+    "Fintech Developer spécialisé en React et Node.js. Découvrez mon portfolio et contactez-moi.",
+  keywords: "Didicode, fintech, developer, Node.js, React, JavaScript, web",
 };
 
 export default function RootLayout({

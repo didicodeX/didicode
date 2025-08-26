@@ -7,8 +7,3 @@ Host: https://didicode.com
 
 # Sitemaps
 Sitemap: https://didicode.com/sitemap.xml
-
-
-Disallow: /assets/CV_Tano_Dylane-PUUnSFiX.pdf
-Disallow: /assets/CV_Tano_Dylane-DcotswcN.pdf
-Disallow: /assets/CV_Tano_Dylane-DpmCKJjm.pdf

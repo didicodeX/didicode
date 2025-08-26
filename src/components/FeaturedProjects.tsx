@@ -32,17 +32,17 @@ export default function FeaturedProjects() {
               </div>
               <div className="max-w-xl">
                 <div className="mt-6 sm:mt-8 flex items-center gap-x-2 sm:gap-x-4 text-xs">
-                  {project.tech.slice(0, 3).map((tag) => (
+                  {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="relative z-10 rounded-full bg-primary-50 dark:bg-primary-800 px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-700"
+                      className="relative z-10 rounded-full bg-primary-100 dark:bg-primary-800 px-3 py-1 text-xs font-medium text-primary-800 dark:text-primary-100"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 <div className="group relative">
-                  <h3 className="mt-3 text-base sm:text-lg font-semibold leading-6 text-primary-900 dark:text-primary-100 group-hover:text-primary-600 dark:group-hover:text-primary-100">
+                  <h3 className="mt-3 text-base sm:text-lg font-semibold leading-6 text-primary-900 dark:text-primary-100 group-hover:text-primary-600 ">
                     <Link href={`/projects/${project.slug}`}>
                       <span className="absolute inset-0" />
                       {project.title}

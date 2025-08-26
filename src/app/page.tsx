@@ -5,7 +5,7 @@ import SkillsMarquee from "@/components/SkillsMarquee";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
+    <div className="flex flex-col">
       <Hero />
       <Expertise />
       <FeaturedProjects />

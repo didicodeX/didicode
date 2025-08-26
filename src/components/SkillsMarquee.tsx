@@ -51,7 +51,7 @@ export default function SkillsMarquee() {
             return (
               <MarqueeItem
                 key={tech}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center mr-5"
               >
                 {hasVariant ? (
                   <>

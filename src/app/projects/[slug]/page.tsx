@@ -1,12 +1,16 @@
 // app/projects/[slug]/page.tsx
 
-import { constructMetadata } from "@/lib/seo";
-import Gallery from "@/components/Gallery";
-import { projects } from "@/lib/projects";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { projects } from "@/lib/projects";
 import { notFound } from "next/navigation";
+import { constructMetadata } from "@/lib/seo";
+import Button from "@/components/Button";
+import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
+
+export async function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -15,12 +19,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-
-  if (!project) {
-    return constructMetadata({
-      title: "Project Not Found",
-    });
-  }
+  if (!project) return {};
 
   return constructMetadata({
     title: project.seo.title,
@@ -29,121 +28,132 @@ export async function generateMetadata({
   });
 }
 
-export default async function ProjectDetailPage({
+export default async function ProjectPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-
-  if (!project) {
-    notFound();
-  }
+  if (!project) return notFound();
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-8 sm:py-12 mt-16">
-      {/* Header */}
-      <section className="space-y-4 sm:space-y-6">
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to projects
-        </Link>
+    <main className="mx-auto max-w-4xl px-6 py-8 sm:py-12 space-y-16 sm:space-y-10">
+      {/* Back button */}
+      <Link
+        href="/projects"
+        className="inline-flex items-center text-sm text-primary-600 hover:text-primary-900 dark:text-primary-100 dark:hover:text-primary-100"
+      >
+        <ArrowLeft className="mr-2 h-4 w-4" />
+        Back to projects
+      </Link>
 
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 dark:text-primary-100">
-              {project.title}
-            </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-primary-600 dark:text-primary-100">
-              {project.tagline}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-sm font-medium bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+      {/* Project header */}
+      <div className="space-y-4">
+        <div className="flex items-center gap-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-800 dark:bg-primary-800 dark:text-primary-100"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
-      </section>
+        <h1 className="text-3xl font-bold text-primary-900 dark:text-primary-100">
+          {project.title}
+        </h1>
+        <p className="text-xl text-primary-600 dark:text-primary-100">
+          {project.tagline}
+        </p>
+      </div>
 
-      {/* Media Gallery */}
-      <section className="pt-16 sm:pt-20 lg:pt-24">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100 mb-6 sm:mb-8">
-          Gallery
-        </h2>
-        {project.images.gallery.length > 0 && (
-          <Gallery images={project.images.gallery} title={project.title} />
+      {/* Project image */}
+      <div className="relative">
+        <Image
+          src={project.images.cover}
+          alt={project.title}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl"
+        />
+      </div>
+
+      {/* Project links */}
+      <div className="flex gap-4 sm:gap-6 justify-center w-fit mx-auto">
+        {project.links.demo && (
+          <Button
+            href={project.links.demo}
+            variant="primary"
+            className="w-fit"
+            size="lg"
+          >
+            <ExternalLink className="mr-2 h-4 w-4" />
+            View live
+          </Button>
         )}
-      </section>
+        {project.links.repo && (
+          <Button
+            href={project.links.repo}
+            variant="outline"
+            className="w-fit"
+            size="lg"
+          >
+            <Github className="mr-2 h-4 w-4" />
+            View code
+          </Button>
+        )}
+      </div>
 
-      {/* Project Overview */}
-      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
+      {/* Overview */}
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-primary-900 dark:text-primary-100">
           Overview
         </h2>
-        <div className="space-y-8 sm:space-y-10">
-          <div>
-            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100 mb-3 sm:mb-4">
-              Summary
-            </h3>
-            <p className="text-base sm:text-lg leading-relaxed text-primary-700 dark:text-primary-100">
-              {project.summary}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100 mb-3 sm:mb-4">
-              Problem
-            </h3>
-            <p className="text-base sm:text-lg leading-relaxed text-primary-700 dark:text-primary-100">
-              {project.problem}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100 mb-3 sm:mb-4">
-              Solution
-            </h3>
-            <p className="text-base sm:text-lg leading-relaxed text-primary-700 dark:text-primary-100">
-              {project.solution}
-            </p>
-          </div>
-        </div>
+        <p className="text-primary-700 dark:text-primary-100">
+          {project.summary}
+        </p>
       </section>
 
+      {/* Problem & Solution */}
+      <div className="grid gap-8 sm:gap-12 md:grid-cols-2">
+        <section className="space-y-4">
+          <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100">
+            Problem
+          </h3>
+          <p className="text-primary-700 dark:text-primary-100">
+            {project.problem}
+          </p>
+        </section>
+        <section className="space-y-4">
+          <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100">
+            Solution
+          </h3>
+          <p className="text-primary-700 dark:text-primary-100">
+            {project.solution}
+          </p>
+        </section>
+      </div>
+
       {/* Highlights */}
-      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
+      <section className="space-y-4">
+        <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100">
           Key Features
-        </h2>
-        <ul className="space-y-4 sm:space-y-5">
-          {project.highlights.map((highlight, index) => (
-            <li
-              key={index}
-              className="flex items-start gap-3 text-base sm:text-lg text-primary-700 dark:text-primary-100"
-            >
-              <span className="w-2 h-2 bg-primary-600 rounded-full mt-2 flex-shrink-0" />
+        </h3>
+        <ul className="list-disc pl-6 space-y-2">
+          {project.highlights.map((highlight, i) => (
+            <li key={i} className="text-primary-700 dark:text-primary-100">
               {highlight}
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Tech Stack */}
-      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
+      {/* Tech stack */}
+      <section className="space-y-4">
+        <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100">
           Tech Stack
-        </h2>
+        </h3>
         <div className="flex flex-wrap gap-4 sm:gap-6">
           {project.tech.map((tech, index) => {
             const hasVariants = [
@@ -161,7 +171,7 @@ export default async function ProjectDetailPage({
             return (
               <div
                 key={index}
-                className="flex items-center gap-2 p-3 sm:p-4 bg-primary-50 dark:bg-primary-800 rounded-lg"
+                className="flex items-center gap-2 p-3 sm:p-4 bg-primary-100 dark:bg-primary-800 rounded-lg"
               >
                 {hasVariants ? (
                   <>
@@ -198,36 +208,26 @@ export default async function ProjectDetailPage({
         </div>
       </section>
 
-      {/* Links */}
-      <section className="pt-16 sm:pt-20 lg:pt-24 space-y-6 sm:space-y-8">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-900 dark:text-primary-100">
-          Links
-        </h2>
-        <div className="flex gap-4 sm:gap-6">
-          {project.links.demo && (
-            <a
-              href={project.links.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-            >
-              <ExternalLink className="w-4 h-4" />
-              Live Demo
-            </a>
-          )}
-          {project.links.repo && (
-            <a
-              href={project.links.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 border border-primary-300 dark:border-primary-600 text-primary-700 dark:text-primary-100 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-800 transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              View Code
-            </a>
-          )}
-        </div>
-      </section>
+      {/* Gallery */}
+      {project.images.gallery.length > 0 && (
+        <section className="space-y-4">
+          <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100">
+            Gallery
+          </h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            {project.images.gallery.map((image, i) => (
+              <Image
+                key={i}
+                src={image}
+                alt={`${project.title} screenshot ${i + 1}`}
+                width={600}
+                height={400}
+                className="w-full rounded-lg"
+              />
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

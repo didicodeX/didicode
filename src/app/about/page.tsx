@@ -28,7 +28,7 @@ export default function AboutPage() {
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-900 dark:text-primary-100">
             {siteConfig.name}
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-primary-600 dark:text-primary-100 mt-2">
+          <p className="text-lg sm:text-xl lg:text-2xl text-primary-600 dark:text-primary-400 font-semibold mt-2">
             Fintech Developer
           </p>
         </div>
@@ -87,36 +87,36 @@ export default function AboutPage() {
           Experience
         </h2>
         <div className="space-y-6 sm:space-y-8">
-          <div className="border-l-4 border-primary-600 pl-6">
+          <div className="border-l-4 border-primary-600 dark:border-primary-600 pl-6">
             <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100">
               Fintech Developer
             </h3>
             <p className="text-primary-600 dark:text-primary-100">
-              2025 - Present
+              May. 2025 — Present
             </p>
             <p className="mt-2 text-primary-700 dark:text-primary-100">
               Building payment platforms and SaaS solutions with focus on Stripe
               integrations, subscription management, and multi-currency support.
             </p>
           </div>
-          <div className="border-l-4 border-primary-300 dark:border-primary-600 pl-6">
+          <div className="border-l-4 border-primary-300 dark:border-primary-300 pl-6">
             <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100">
               Full Stack Developer
             </h3>
             <p className="text-primary-600 dark:text-primary-100">
-              2024 - 2025
+              Sept. 2024 — Apr. 2025
             </p>
             <p className="mt-2 text-primary-700 dark:text-primary-100">
               Developed web applications using React, Node.js, and modern web
               technologies. Built learning platforms and donation systems.
             </p>
           </div>
-          <div className="border-l-4 border-primary-300 dark:border-primary-600 pl-6">
+          <div className="border-l-4 border-primary-300 dark:border-primary-300 pl-6">
             <h3 className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-100">
               Frontend Developer
             </h3>
             <p className="text-primary-600 dark:text-primary-100">
-              2023 - 2024
+              Feb. 2023 — Aug. 2024
             </p>
             <p className="mt-2 text-primary-700 dark:text-primary-100">
               Developed web applications using JavaScript, HTML, and CSS.
@@ -185,14 +185,14 @@ export default function AboutPage() {
         <div className="flex gap-4 flex-wrap">
           <a
             href={`mailto:${siteConfig.links.email}`}
-            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-600 transition-colors"
           >
             <Mail className="h-5 w-5" />
             Email
           </a>
           <a
             href={siteConfig.links.linkedin}
-            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-600 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -201,7 +201,7 @@ export default function AboutPage() {
           </a>
           <a
             href={siteConfig.links.github}
-            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-600 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -210,7 +210,7 @@ export default function AboutPage() {
           </a>
           <a
             href={siteConfig.links.twitter}
-            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-100 transition-colors"
+            className="flex items-center gap-2 text-primary-600 dark:text-primary-100 hover:text-primary-900 dark:hover:text-primary-600 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >

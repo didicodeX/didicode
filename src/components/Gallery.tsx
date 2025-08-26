@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { createPortal } from "react-dom";
 
 interface GalleryProps {
   images: string[];
@@ -11,6 +12,11 @@ interface GalleryProps {
 
 export default function Gallery({ images, title }: GalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleNext = () => {
     setSelectedIndex((prev) =>
@@ -77,67 +83,70 @@ export default function Gallery({ images, title }: GalleryProps) {
       </div>
 
       {/* Modal */}
-      {selectedIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={() => setSelectedIndex(null)}
-          onKeyDown={handleKeyDown}
-          tabIndex={0}
-        >
-          {/* Close button */}
-          <button
-            onClick={() => setSelectedIndex(null)}
-            className="absolute top-4 right-4 z-10 text-white hover:text-primary-300 transition-colors"
-          >
-            <X className="w-8 h-8" />
-          </button>
-
-          {/* Navigation buttons */}
-          {images.length > 1 && (
-            <>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handlePrev();
-                }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-primary-300 transition-colors"
-              >
-                <ChevronLeft className="w-8 h-8" />
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleNext();
-                }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-primary-300 transition-colors"
-              >
-                <ChevronRight className="w-8 h-8" />
-              </button>
-            </>
-          )}
-
-          {/* Image */}
+      {selectedIndex !== null &&
+        mounted &&
+        createPortal(
           <div
-            className="relative max-w-full max-h-full"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+            onClick={() => setSelectedIndex(null)}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
           >
-            <Image
-              src={images[selectedIndex]}
-              alt={`${title || "Gallery"} image ${selectedIndex + 1}`}
-              width={1200}
-              height={800}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg"
-            />
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 z-10 text-white hover:text-primary-300 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
 
-            {/* Image counter */}
+            {/* Navigation buttons */}
             {images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-                {selectedIndex + 1} / {images.length}
-              </div>
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePrev();
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-primary-300 transition-colors"
+                >
+                  <ChevronLeft className="w-8 h-8" />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleNext();
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:text-primary-300 transition-colors"
+                >
+                  <ChevronRight className="w-8 h-8" />
+                </button>
+              </>
             )}
-          </div>
-        </div>
-      )}
+
+            {/* Image */}
+            <div
+              className="relative max-w-full max-h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={images[selectedIndex]}
+                alt={`${title || "Gallery"} image ${selectedIndex + 1}`}
+                width={1200}
+                height={800}
+                className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              />
+
+              {/* Image counter */}
+              {images.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                  {selectedIndex + 1} / {images.length}
+                </div>
+              )}
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }

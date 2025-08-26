@@ -5,6 +5,7 @@ import { projects } from "@/lib/projects";
 import { notFound } from "next/navigation";
 import { constructMetadata } from "@/lib/seo";
 import Button from "@/components/Button";
+import Gallery from "@/components/Gallery";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
@@ -214,18 +215,7 @@ export default async function ProjectPage({
           <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100">
             Gallery
           </h3>
-          <div className="grid gap-4 md:grid-cols-2">
-            {project.images.gallery.map((image, i) => (
-              <Image
-                key={i}
-                src={image}
-                alt={`${project.title} screenshot ${i + 1}`}
-                width={600}
-                height={400}
-                className="w-full rounded-lg"
-              />
-            ))}
-          </div>
+          <Gallery images={project.images.gallery} title={project.title} />
         </section>
       )}
     </main>

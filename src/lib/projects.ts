@@ -57,6 +57,7 @@ export const projects: Project[] = [
         "/images/projects/paymavo/3.png",
         "/images/projects/paymavo/4.png",
         "/images/projects/paymavo/5.png",
+        "/images/projects/paymavo/6.png",
       ],
     },
     seo: {
@@ -81,7 +82,7 @@ export const projects: Project[] = [
       "Donor list with live updates",
       "Minimal, respectful UX",
     ],
-    tech: ["React", "nodejs", "Stripe", "MongoDB", "Tailwindcss"],
+    tech: ["React", "nodejs", "stripe", "mongodb", "tailwindcss"],
     links: { demo: "https://hommage-whvr.vercel.app/", repo: "" },
     images: {
       cover: "/images/projects/hommage/cover.png",

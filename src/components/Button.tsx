@@ -28,7 +28,7 @@ export default function Button({
     secondary:
       "bg-primary-100 dark:bg-primary-800 text-primary-900 dark:text-primary-100 hover:bg-primary-200 dark:hover:bg-primary-700 focus-visible:ring-primary-600",
     outline:
-      "border border-primary-300 bg-white text-primary-700 hover:bg-primary-50 focus-visible:ring-primary-600 dark:bg-primary-500 dark:text-primary-100 dark:border-primary-700 dark:hover:bg-primary-800",
+      "border border-primary-300 bg-white text-primary-700 hover:bg-primary-50 focus-visible:ring-primary-600",
   };
 
   const sizes = {

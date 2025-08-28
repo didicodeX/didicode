@@ -200,7 +200,7 @@ export default async function ProjectPage({
                     className="object-contain"
                   />
                 )}
-                <span className="text-sm sm:text-base font-medium text-primary-700 dark:text-primary-100">
+                <span className="text-sm sm:text-base font-medium text-primary-700 dark:text-primary-100 capitalize">
                   {tech}
                 </span>
               </div>
